@@ -3,22 +3,14 @@ import os
 import time
 
 
-class Updater:
+class Refresher:
+    curDate = time.time()
 
     def __init__(self, wallet_adr, dir_adr):
         self.data = dir_adr
         self.__URLlink = wallet_adr
 
-    def setCurrencyLink(self, link):
-        self.__URLlink = link
-
-    def getCurrencyLink(self):
-        return self.__URLlink
-
-    def setFilename(self, data):
-        self.data = data
-
-    def getFilename(self):
+    def getFileLink(self):
         return self.data
 
     def updateLatestDownloadedDate(self):
@@ -27,12 +19,12 @@ class Updater:
             # creates directory for external files if it doesn't exist
         if not os.path.exists(self.data):
             urllib.request.urlretrieve(self.__URLlink, self.data)
-        elif time.time() - os.path.getmtime(self.data) > 86400:
+        elif self.curDate - os.path.getmtime(self.data) > 86400: # date length in sec
             urllib.request.urlretrieve(self.__URLlink, self.data)
         # updates info if day passe
 
 
-a = Updater("https://www.cryptodatadownload.com/cdd/Gemini_BTCUSD_d.csv", "\\CryptZ\\Gemini_BTCUSD_d.csv")
+a = Refresher("https://www.cryptodatadownload.com/cdd/Gemini_BTCUSD_d.csv", "\\CryptZ\\Gemini_BTCUSD_d.csv")
 a.updateLatestDownloadedDate()
 
 
