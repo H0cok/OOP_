@@ -21,4 +21,4 @@ fig.add_trace(go.Scatter(
     )
 ))
 
-fig.write_image("C:\Program Files\CryptZ\i8g1.png",width=1110, height=360, scale=1)
+#fig.write_image("C:\Program Files\CryptZ\i8g1.png",width=1110, height=360, scale=1, engine = 'kaleido')
