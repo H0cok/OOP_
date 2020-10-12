@@ -3,7 +3,7 @@ import os
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
-
+import plotly.io
 if not os.path.exists("OOP_\\images"):
     os.mkdir("OOP_\\images")
 class MainDash:
@@ -34,7 +34,7 @@ class MainDash:
                      hover_data=['Volume_BTC', 'Volume_USD'],
                      title='Evolution')
         fig.show() #x:Date; y:Price; color:Volume; prompted_data:'Volume_BTC', 'Volume_USD'
-        #fig.write_image("OOP_\\images\\fig3.png")
+        fig.write_image("OOP_\\images\\fig3.png", engine = 'kaleido')
 
 graph = MainDash("2018-09-27", "2019-03-27")
 graph.drawLineDash()
