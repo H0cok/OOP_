@@ -7,8 +7,7 @@ from abc import ABCMeta, abstractmethod, abstractproperty
 
 
 
-class Refresher:
-    curDate = time.time()
+
 
 class UserInput:
     state = True # the input-field doesn`t blocked
@@ -51,6 +50,7 @@ class Refresher(CryptData):
     def __init__(self, wallet_adr, dir_adr, name):
         super().__init__(dir_adr, name)
         self.__URLlink = wallet_adr
+        self.curDate = time.time()
 
     def getFileLink(self):
         return self.data
@@ -67,7 +67,6 @@ class Refresher(CryptData):
 
 
 
-a = Refresher("https://www.cryptodatadownload.com/cdd/Gemini_BTCUSD_d.csv", "\\CryptZ\\Gemini_BTCUSD_d.csv")
 
 class Data(CryptData):
     def __init__(self, dir_adr, name, start, end, range = None, minDate = None, maxDate = None):
