@@ -3,6 +3,7 @@ import os
 import time
 import pandas as pd
 import datetime
+from abc import ABCMeta, abstractmethod, abstractproperty
 
 
 class UserInput:
@@ -32,7 +33,6 @@ class UserInput:
     def setState(self, state_inp): #triggered by generate btn
         self.state = state_inp
 
-basic_input = UserInput(datetime.date(2016, 3, 4), datetime.date(2016, 3, 9), "BTC", "day")
 
 class CryptData:
 
@@ -82,7 +82,6 @@ class Data(CryptData):
         self.maxDate = datetime.date(int(self.df.iloc[-0].Date[0: 4]),
                                      int(self.df.iloc[-0].Date[5: 7]), int(self.df.iloc[-0].Date[8:]))
 
-
     def getDataRange(self):
         if self.minDate < self.StartDate < self.EndDate < self.maxDate:
             down = self.df[self.df.Date == str(self.EndDate)].index[0]
@@ -90,15 +89,8 @@ class Data(CryptData):
             self.range = self.df.iloc[down: up + 1][::]
             return self.range
         else:
-            return False #some error message
 
-
-
-
-
-
-
-
+            return RangeError("Incorrect values").ShowError()
 
 
 class History:
@@ -107,17 +99,42 @@ class History:
         self.minDate = minDate
         self.maxDate = maxDate
         self.name = name
+
     def getrange(self):
         return self.curRange.getDataRange()
 
+    def getStartDate(self):
+        return self.minDate
+
+    def getEndDate(self):
+        return self.maxDate
+
+
+class Error:
+    __metaclass__ = ABCMeta
+
+    @abstractmethod
+    def ShowError(self):
+        pass
+
+
+class RangeError(Error):
+    def __init__(self, message):
+        self.message = message
+
+    def ShowError(self):
+        print(self.message)
 
 
 
 
+
+basic_input = UserInput(datetime.date(2016, 3, 4), datetime.date(2016, 3, 9), "BTC", "day")
 
 a = Refresher("https://www.cryptodatadownload.com/cdd/Gemini_BTCUSD_d.csv", "CryptZ\BTC__USD.csv", "BTC")
 a.updateLatestDownloadedDate()
-f = History('CryptZ\BTC__USD.csv', 'BTC', datetime.date(2019, 11, 17), datetime.date(2020, 6, 5))
+
+f = History('CryptZ\BTC__USD.csv', 'BTC', datetime.date(2019, 11, 17), datetime.date(2020, 7, 5))
 print(f.getrange())
 
 
