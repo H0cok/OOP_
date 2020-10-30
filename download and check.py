@@ -5,6 +5,10 @@ import pandas as pd
 import datetime
 
 
+
+class Refresher:
+    curDate = time.time()
+
 class UserInput:
     state = True # the input-field doesn`t blocked
     def __init__(self, st_date, end_date, coin_inp, intervals = None, investments = None):
@@ -13,6 +17,7 @@ class UserInput:
         self.coin = coin_inp
         self.granularity = intervals
         self.investments = investments
+
 
     def setStartDate(self, st_date):
         self.startDate = st_date
@@ -47,16 +52,7 @@ class Refresher(CryptData):
         super().__init__(dir_adr, name)
         self.__URLlink = wallet_adr
 
-    def setCurrencyLink(self, link):
-        self.__URLlink = link
-
-    def getCurrencyLink(self):
-        return self.__URLlink
-
-    def setFilename(self, data):
-        self.data = data
-
-    def getFilename(self):
+    def getFileLink(self):
         return self.data
 
     def updateLatestDownloadedDate(self):
@@ -65,10 +61,13 @@ class Refresher(CryptData):
             # creates directory for external files if it doesn't exist
         if not os.path.exists(self.data):
             urllib.request.urlretrieve(self.__URLlink, self.data)
-        elif time.time() - os.path.getmtime(self.data) > 86400:
+        elif self.curDate - os.path.getmtime(self.data) > 86400: # date length in sec
             urllib.request.urlretrieve(self.__URLlink, self.data)
         # updates info if day passe
 
+
+
+a = Refresher("https://www.cryptodatadownload.com/cdd/Gemini_BTCUSD_d.csv", "\\CryptZ\\Gemini_BTCUSD_d.csv")
 
 class Data(CryptData):
     def __init__(self, dir_adr, name, start, end, range = None, minDate = None, maxDate = None):
@@ -116,6 +115,7 @@ class History:
 
 
 a = Refresher("https://www.cryptodatadownload.com/cdd/Gemini_BTCUSD_d.csv", "CryptZ\BTC__USD.csv", "BTC")
+
 a.updateLatestDownloadedDate()
 f = History('CryptZ\BTC__USD.csv', 'BTC', datetime.date(2019, 11, 17), datetime.date(2020, 6, 5))
 print(f.getrange())
