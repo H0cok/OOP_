@@ -1,4 +1,2 @@
-import os
-import time
-print(os.path.getmtime("\\CryptZ\\78.txt"))
-print(time.time())
+import datetime
+print(datetime.date(2019,11,6) - datetime.timedelta(days=30))

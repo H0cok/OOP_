@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Main_window</class>
- <widget class="QMainWindow" name="Main_window">
+ <class>fedf</class>
+ <widget class="QWidget" name="fedf">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,11 +11,8 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Main_window</string>
+   <string>fedf</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar"/>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
