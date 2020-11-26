@@ -6,18 +6,21 @@ import datetime
 import numpy as np
 import plotly.express as px
 from statsmodels.tsa.arima_model import ARIMA
-# from sklearn.preprocessing import MinMaxScaler
-# from keras.models import Sequential
-# from keras.layers import Dense, Dropout, LSTM
+from sklearn.preprocessing import MinMaxScaler
+#dependencies for the last method
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.model_selection import train_test_split
+
+
 
 class UserInput:
     state = True # the input-field doesn`t blocked
     def __init__(self, st_date, end_date, coin_inp, intervals = None, investments = None):
-        self.startDate = st_date
-        self.endDate = end_date
-        self.coin = coin_inp
-        self.granularity = intervals
-        self.investments = investments
+        self.__startDate = st_date
+        self.__endDate = end_date
+        self.__coin = coin_inp
+        self.__granularity = intervals
+        self.__investments = investments
 
     def setStartDate(self, st_date):
         self.startDate = st_date
@@ -95,7 +98,7 @@ class Data(CryptData):
             self.range = self.df.iloc[down: up + 1][::]
             return self.range
         else:
-            print(CustomExeption("Your range is empty"))
+            raise CustomExeption("Your range is empty")
 class History:
     def __init__(self, dir_adr, name, minDate, maxDate):
         self.curRange = Data(dir_adr, name, minDate, maxDate)
@@ -109,8 +112,8 @@ class Plot:
     def drawPlot(self, df, x_axys, y_axys): #draw a line based plot
         fig = px.line(df, x = x_axys, y = y_axys) #x:date; y:price
         fig.show()
-        #fig.to_image(format="png", engine="kaleido")
-        #fig.write_image("OOP_\\images\\fig1.png")
+        fig.to_image(format="png", engine="kaleido")
+        fig.write_image("images\\fig1.png")
 
     # def mixing(self):
     #     fig = px.bar(self.df, y='Close', x=self.df.Date, color='Volume_BTC', labels={'y': 'Close'},
@@ -121,6 +124,42 @@ class Plot:
 
 
 class Genie:
+    def predict_ml(self, df):
+        df = df.iloc[::-1] # reverse data-frame
+        dp = df.copy()
+        df = df[['Close']]
+        future_days = 30 # variable to predict 'x' days
+        df['Prediction'] = df[['Close']].shift(-future_days)
+
+        #creating a feature data set converted to numpy array without the last 'x' rows
+        x = np.array(df.drop(['Prediction'], 1))[:-future_days]
+        #creating the target data set
+        y = np.array(df['Prediction'])[:-future_days]
+        #Split the data 70% training and 30% testing
+        x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.3)
+        #The decision tree regressor model
+        tree = DecisionTreeRegressor().fit(x_train, y_train)
+
+        #Get the last 'x' rows from the feature data set
+        x_future = df.drop(['Prediction'], 1)[:-future_days]
+        x_future = x_future.tail(future_days)
+        x_future = np.array(x_future)
+        #Show the model tree prediction
+        tree_prediction = tree.predict(x_future)
+        # print('Mean Absolute Error:', metrics.mean_absolute_error(y_test, tree_prediction))
+        # print('Mean Squared Error:', metrics.mean_squared_error(y_test, tree_prediction))
+        test = pd.DataFrame()
+        test['Tree'] = tree_prediction
+        date = np.array(dp['Date'][-30:])
+        test['Date'] = date
+        #Visualizing the data
+        fig_p = px.line(test, x = 'Date', y = 'Tree') #x:date; y:price
+        fig_p.show()
+        #dp = dp.iloc[-30:]
+        #fig = px.line(dp, x = 'Date', y = 'Close')
+        #fig.show()
+
+
     def predict_val_arima(self, df):
         df = df.iloc[::-1]#reverse data-frame
 
@@ -136,57 +175,18 @@ class Genie:
         pred = pred.to_list()
         test['Predicted'] = pred
         print(test)
-        graph.drawPlot(test, 'Date', 'Predicted')
+        #graph.drawPlot(test, 'Date', 'Predicted')
         # fig = px.line(test, x = 'Date', y = 'Predicted') #x:date; y:price
         # fig.show()
-    # def predict_val_lstm(self, df):
-    #     df = df.iloc[::-1]#reverse data-frame
-    #
-    #     train = df.iloc[:-30]
-    #     valid = df.iloc[-30:]
-    #
-    #     scaler = MinMaxScaler(feature_range=(0, 1))
-    #     scaled_data = scaler.fit_transform(df)
-    #
-    #     x_train, y_train = [], []
-    #     for i in range(60,len(train)):
-    #         x_train.append(scaled_data[i-60:i,0])
-    #         y_train.append(scaled_data[i,0])
-    #     x_train, y_train = np.array(x_train), np.array(y_train)
-    #     x_train = np.reshape(x_train, (x_train.shape[0],x_train.shape[1],1))
-    #
-    #     # create and fit the LSTM network
-    #     model = Sequential()
-    #     model.add(LSTM(units=50, return_sequences=True, input_shape=(x_train.shape[1], 1)))
-    #     model.add(LSTM(units=50))
-    #     model.add(Dense(1))
-    #
-    #     model.compile(loss='mean_squared_error', optimizer='adam')
-    #     model.fit(x_train, y_train, epochs=1, batch_size=1, verbose=2)
-    #
-    #     # predicting 246 values, using past 60 from the train data
-    #     inputs = df[len(df) - len(valid) - 60:].values
-    #     inputs = inputs.reshape(-1, 1)
-    #     inputs = scaler.transform(inputs)
-    #     X_test = []
-    #     for i in range(60, inputs.shape[0]):
-    #         X_test.append(inputs[i - 60:i, 0])
-    #     X_test = np.array(X_test)
-    #
-    #     X_test = np.reshape(X_test, (X_test.shape[0], X_test.shape[1], 1))
-    #     closing_price = model.predict(X_test)
-    #     closing_price = scaler.inverse_transform(closing_price)
-    #
-    #     rms = np.sqrt(np.mean(np.power((valid - closing_price), 2)))
-    #     print(rms)
+
 
 # a = Refresher("https://www.cryptodatadownload.com/cdd/Gemini_BTCUSD_d.csv", "CryptZ\BTC__USD.csv", "BTC")
 # a.updateLatestDownloadedDate()
 try:
-    f = History("CryptZ\\BTC__USD.csv", "BTC", datetime.date(2019, 11, 17), datetime.date(2019, 11, 17))
+    f = History("CryptZ\\BTC__USD.csv", "BTC", datetime.date(2016, 11, 17), datetime.date(2020, 7, 17))
     graph = Plot()
-    graph.drawPlot(f.getrange(), 'Date', 'Close')
+    #graph.drawPlot(f.getrange(), 'Date', 'Close')
     prediction = Genie()
-    prediction.predict_val_arima(f.getrange())
-except:
-    print(CustomExeption("Graph can't be created\n"))
+    prediction.predict_ml(f.getrange())
+except CustomExeption as e:
+    print(e)
