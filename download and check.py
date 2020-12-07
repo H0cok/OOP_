@@ -8,6 +8,14 @@ from abc import ABCMeta, abstractmethod, abstractproperty
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
 from fg import *
+from statsmodels.tsa.arima_model import ARIMA
+#dependencies for the DecisionTree method
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.model_selection import train_test_split
+import numpy as np
+
+
+
 class UserInput:
     state = True # the input-field doesn`t blocked
     def __init__(self, st_date, end_date, coin_inp, intervals = None, investments = None):
@@ -46,7 +54,6 @@ class Plot:
 
     def drawPlot(self): #draw a line based plot
         self.fig = px.line(self.df, x='Date', y='Close', width=990, height=335) #x:date; y:price
-        self.fig.to_image(format="png", width=881, height=21, scale=0.01)
         self.fig.write_image("CryptZ\\fig3.png")
 
     def mixing(self):
@@ -87,6 +94,7 @@ class Refresher(CryptData):
 class Data(CryptData):
     def __init__(self, dir_adr, name, start, end, range = None, minDate = None, maxDate = None):
         super().__init__(dir_adr, name)
+
         self.df = pd.read_csv(dir_adr, usecols=['Close', 'Date', 'Volume BTC', 'Volume USD'])
         self.StartDate = start
         self.EndDate = end
@@ -96,7 +104,9 @@ class Data(CryptData):
         self.maxDate = datetime.date(int(self.df.iloc[-0].Date[0: 4]),
                                      int(self.df.iloc[-0].Date[5: 7]), int(self.df.iloc[-0].Date[8:]))
 
+
     def getDataRange(self):
+
         if self.minDate < self.StartDate < self.EndDate < self.maxDate:
             down = self.df[self.df.Date == str(self.EndDate)].index[0]
             up = self.df[self.df.Date == str(self.StartDate)].index[0]
@@ -139,12 +149,57 @@ class RangeError(Error):
     def ShowError(self):
         print(self.message)
 
+class Genie:
+    def __init__(self, futute_days):
+        self.__future_days = futute_days
+
+        # variable to predict 'x' days
+
+    def setDayPrediction(self, future_days):
+        self.__future_days = future_days
+
+    def predict_ml(self, df):
+        df = df.iloc[::-1]  # reverse data-frame
+        df = df[['Close']]
+        future_days = 30  # variable to predict 'x' days
+        df['Prediction'] = df[['Close']].shift(-future_days)
+        df['Prediction'] = df[['Close']].shift(-self.__future_days)
+
+        # creating a feature data set converted to numpy array without the last 'x' rows
+        x = np.array(df.drop(['Prediction'], 1))[:-future_days]
+        y = np.array(df['Prediction'])[:-future_days]
+        x = np.array(df.drop(['Prediction'], 1))[:-self.__future_days]
+        y = np.array(df['Prediction'])[:-self.__future_days]
+        # Split the data for training and testing
+        x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.0025)
+        tree = DecisionTreeRegressor().fit(x_train, y_train)
+
+        # Get the last 'x' rows from the feature data set
+        x_future = df.drop(['Prediction'], 1)[:-future_days]
+        x_future = x_future.tail(future_days)
+        x_future = df.drop(['Prediction'], 1)[:-self.__future_days]
+        x_future = x_future.tail(self.__future_days)
+        x_future = np.array(x_future)
+        # Show the model tree prediction
+        tree_prediction = tree.predict(x_future)
+        test = pd.DataFrame()
+        test['Tree'] = tree_prediction
+        # Create a current range
+        start = datetime.date.today()
+        date_generated = [start + datetime.timedelta(days=x) for x in range(future_days)]
+        date_generated = [start + datetime.timedelta(days=x) for x in range(self.__future_days)]
+        date_table = []
+        for date in date_generated:
+            date_table.append(date.strftime("%Y-%m-%d"))
+        test['Date'] = date_table
+        fig_p = px.line(test, x = 'Date', y = 'Tree', width=652, height=290) #x:date; y:price
+        fig_p.write_image("CryptZ\\fig4.png")
 
 
 
 
 
-basic_input = UserInput(datetime.date(2016, 3, 4), datetime.date(2016, 3, 9), "BTC", "day")
+
 
 
 a = Refresher("https://www.cryptodatadownload.com/cdd/Gemini_BTCUSD_d.csv", "CryptZ\BTC__USD.csv", "BTC")
@@ -165,6 +220,16 @@ class Window(QtWidgets.QMainWindow, Ui_Window):
         self.setdate = ''
         self.plot = ''
         self.Submit.clicked.connect(self.history)
+        self.Submit_2.clicked.connect(self.predictor)
+        self.horizontalSlider.hide()
+        self.horizontalSlider.valueChanged.connect(self.slider)
+        self.horizontalSlider.setValue(20)
+
+
+        #self.horizontalSlider.hide()
+        #self.lineEdit.hide()
+        #self.toolButton_Coin_3.clicked.connect(self.lineEdit.show())
+
 
 
 
@@ -172,85 +237,93 @@ class Window(QtWidgets.QMainWindow, Ui_Window):
         self.setdate = History('CryptZ\BTC__USD.csv', 'BTC', datetime.datetime.strptime(self.Tabledate.date().toString(QtCore.Qt.ISODate), "%Y-%m-%d").date(),
                     datetime.datetime.strptime(self.Tabledate.date().toString(QtCore.Qt.ISODate), "%Y-%m-%d").date() + datetime.timedelta(days=31))
         self.setdate = self.setdate.getrange()
-        print(self.setdate)
-        self.lineEdit_Day.setText(str(self.setdate["Date"].tolist()[0]))
-        self.lineEdit_Day_2.setText(str(self.setdate["Date"].tolist()[1]))
-        self.lineEdit_Day_3.setText(str(self.setdate["Date"].tolist()[2]))
-        self.lineEdit_Day_4.setText(str(self.setdate["Date"].tolist()[3]))
-        self.lineEdit_Day_5.setText(str(self.setdate["Date"].tolist()[4]))
-        self.lineEdit_Day_6.setText(str(self.setdate["Date"].tolist()[5]))
-        self.lineEdit_Day_7.setText(str(self.setdate["Date"].tolist()[6]))
-        self.lineEdit_Day_8.setText(str(self.setdate["Date"].tolist()[7]))
-        self.lineEdit_Day_9.setText(str(self.setdate["Date"].tolist()[8]))
-        self.lineEdit_Day_10.setText(str(self.setdate["Date"].tolist()[9]))
-        self.lineEdit_Day_11.setText(str(self.setdate["Date"].tolist()[10]))
-        self.lineEdit_Day_12.setText(str(self.setdate["Date"].tolist()[11]))
-        self.lineEdit_Day_13.setText(str(self.setdate["Date"].tolist()[12]))
-        self.lineEdit_Day_14.setText(str(self.setdate["Date"].tolist()[13]))
-        self.lineEdit_Day_15.setText(str(self.setdate["Date"].tolist()[14]))
-        self.lineEdit_Day_16.setText(str(self.setdate["Date"].tolist()[15]))
-        self.lineEdit_Day_17.setText(str(self.setdate["Date"].tolist()[16]))
-        self.lineEdit_Day_18.setText(str(self.setdate["Date"].tolist()[17]))
-        self.lineEdit_Day_19.setText(str(self.setdate["Date"].tolist()[18]))
-        self.lineEdit_Day_20.setText(str(self.setdate["Date"].tolist()[19]))
-        self.lineEdit_Day_21.setText(str(self.setdate["Date"].tolist()[20]))
-        self.lineEdit_Day_22.setText(str(self.setdate["Date"].tolist()[21]))
-        self.lineEdit_Day_23.setText(str(self.setdate["Date"].tolist()[22]))
-        self.lineEdit_Day_24.setText(str(self.setdate["Date"].tolist()[23]))
-        self.lineEdit_Day_25.setText(str(self.setdate["Date"].tolist()[24]))
-        self.lineEdit_Day_26.setText(str(self.setdate["Date"].tolist()[25]))
-        self.lineEdit_Day_27.setText(str(self.setdate["Date"].tolist()[26]))
-        self.lineEdit_Day_28.setText(str(self.setdate["Date"].tolist()[27]))
-        self.lineEdit_Day_29.setText(str(self.setdate["Date"].tolist()[28]))
-        self.lineEdit_Day_30.setText(str(self.setdate["Date"].tolist()[29]))
-        self.lineEdit_Day_31.setText(str(self.setdate["Date"].tolist()[30]))
-        self.lineEdit_Value.setText(str(self.setdate["Close"].tolist()[0]) + "$")
-        self.lineEdit_Value_2.setText(str(self.setdate["Close"].tolist()[1]) + "$")
-        self.lineEdit_Value_3.setText(str(self.setdate["Close"].tolist()[2]) + "$")
-        self.lineEdit_Value_4.setText(str(self.setdate["Close"].tolist()[3]) + "$")
-        self.lineEdit_Value_5.setText(str(self.setdate["Close"].tolist()[4]) + "$")
-        self.lineEdit_Value_6.setText(str(self.setdate["Close"].tolist()[5]) + "$")
-        self.lineEdit_Value_7.setText(str(self.setdate["Close"].tolist()[6]) + "$")
-        self.lineEdit_Value_8.setText(str(self.setdate["Close"].tolist()[7]) + "$")
-        self.lineEdit_Value_9.setText(str(self.setdate["Close"].tolist()[8]) + "$")
-        self.lineEdit_Value_10.setText(str(self.setdate["Close"].tolist()[9]) + "$")
-        self.lineEdit_Value_11.setText(str(self.setdate["Close"].tolist()[10]) + "$")
-        self.lineEdit_Value_12.setText(str(self.setdate["Close"].tolist()[11]) + "$")
-        self.lineEdit_Value_13.setText(str(self.setdate["Close"].tolist()[12]) + "$")
-        self.lineEdit_Value_14.setText(str(self.setdate["Close"].tolist()[13]) + "$")
-        self.lineEdit_Value_15.setText(str(self.setdate["Close"].tolist()[14]) + "$")
-        self.lineEdit_Value_16.setText(str(self.setdate["Close"].tolist()[15]) + "$")
-        self.lineEdit_Value_17.setText(str(self.setdate["Close"].tolist()[16]) + "$")
-        self.lineEdit_Value_18.setText(str(self.setdate["Close"].tolist()[17]) + "$")
-        self.lineEdit_Value_19.setText(str(self.setdate["Close"].tolist()[18]) + "$")
-        self.lineEdit_Value_20.setText(str(self.setdate["Close"].tolist()[19]) + "$")
-        self.lineEdit_Value_21.setText(str(self.setdate["Close"].tolist()[20]) + "$")
-        self.lineEdit_Value_22.setText(str(self.setdate["Close"].tolist()[21]) + "$")
-        self.lineEdit_Value_23.setText(str(self.setdate["Close"].tolist()[22]) + "$")
-        self.lineEdit_Value_24.setText(str(self.setdate["Close"].tolist()[23]) + "$")
-        self.lineEdit_Value_25.setText(str(self.setdate["Close"].tolist()[24]) + "$")
-        self.lineEdit_Value_26.setText(str(self.setdate["Close"].tolist()[25]) + "$")
-        self.lineEdit_Value_27.setText(str(self.setdate["Close"].tolist()[26]) + "$")
-        self.lineEdit_Value_28.setText(str(self.setdate["Close"].tolist()[27]) + "$")
-        self.lineEdit_Value_29.setText(str(self.setdate["Close"].tolist()[28]) + "$")
-        self.lineEdit_Value_30.setText(str(self.setdate["Close"].tolist()[29]) + "$")
-        self.lineEdit_Value_31.setText(str(self.setdate["Close"].tolist()[30]) + "$")
-
-
-
-
-
-        pass
-
+        listdate = self.setdate["Date"].tolist()
+        listclose = self.setdate["Close"].tolist()
+        self.lineEdit_Day.setText(str(listdate[0]))
+        self.lineEdit_Day_2.setText(str(listdate[1]))
+        self.lineEdit_Day_3.setText(str(listdate[2]))
+        self.lineEdit_Day_4.setText(str(listdate[3]))
+        self.lineEdit_Day_5.setText(str(listdate[4]))
+        self.lineEdit_Day_6.setText(str(listdate[5]))
+        self.lineEdit_Day_7.setText(str(listdate[6]))
+        self.lineEdit_Day_8.setText(str(listdate[7]))
+        self.lineEdit_Day_9.setText(str(listdate[8]))
+        self.lineEdit_Day_10.setText(str(listdate[9]))
+        self.lineEdit_Day_11.setText(str(listdate[10]))
+        self.lineEdit_Day_12.setText(str(listdate[11]))
+        self.lineEdit_Day_13.setText(str(listdate[12]))
+        self.lineEdit_Day_14.setText(str(listdate[13]))
+        self.lineEdit_Day_15.setText(str(listdate[14]))
+        self.lineEdit_Day_16.setText(str(listdate[15]))
+        self.lineEdit_Day_17.setText(str(listdate[16]))
+        self.lineEdit_Day_18.setText(str(listdate[17]))
+        self.lineEdit_Day_19.setText(str(listdate[18]))
+        self.lineEdit_Day_20.setText(str(listdate[19]))
+        self.lineEdit_Day_21.setText(str(listdate[20]))
+        self.lineEdit_Day_22.setText(str(listdate[21]))
+        self.lineEdit_Day_23.setText(str(listdate[22]))
+        self.lineEdit_Day_24.setText(str(listdate[23]))
+        self.lineEdit_Day_25.setText(str(listdate[24]))
+        self.lineEdit_Day_26.setText(str(listdate[25]))
+        self.lineEdit_Day_27.setText(str(listdate[26]))
+        self.lineEdit_Day_28.setText(str(listdate[27]))
+        self.lineEdit_Day_29.setText(str(listdate[28]))
+        self.lineEdit_Day_30.setText(str(listdate[29]))
+        self.lineEdit_Day_31.setText(str(listdate[30]))
+        self.lineEdit_Value.setText(str(listclose[0]) + "$")
+        self.lineEdit_Value_2.setText(str(listclose[1]) + "$")
+        self.lineEdit_Value_3.setText(str(listclose[2]) + "$")
+        self.lineEdit_Value_4.setText(str(listclose[3]) + "$")
+        self.lineEdit_Value_5.setText(str(listclose[4]) + "$")
+        self.lineEdit_Value_6.setText(str(listclose[5]) + "$")
+        self.lineEdit_Value_7.setText(str(listclose[6]) + "$")
+        self.lineEdit_Value_8.setText(str(listclose[7]) + "$")
+        self.lineEdit_Value_9.setText(str(listclose[8]) + "$")
+        self.lineEdit_Value_10.setText(str(listclose[9]) + "$")
+        self.lineEdit_Value_11.setText(str(listclose[10]) + "$")
+        self.lineEdit_Value_12.setText(str(listclose[11]) + "$")
+        self.lineEdit_Value_13.setText(str(listclose[12]) + "$")
+        self.lineEdit_Value_14.setText(str(listclose[13]) + "$")
+        self.lineEdit_Value_15.setText(str(listclose[14]) + "$")
+        self.lineEdit_Value_16.setText(str(listclose[15]) + "$")
+        self.lineEdit_Value_17.setText(str(listclose[16]) + "$")
+        self.lineEdit_Value_18.setText(str(listclose[17]) + "$")
+        self.lineEdit_Value_19.setText(str(listclose[18]) + "$")
+        self.lineEdit_Value_20.setText(str(listclose[19]) + "$")
+        self.lineEdit_Value_21.setText(str(listclose[20]) + "$")
+        self.lineEdit_Value_22.setText(str(listclose[21]) + "$")
+        self.lineEdit_Value_23.setText(str(listclose[22]) + "$")
+        self.lineEdit_Value_24.setText(str(listclose[23]) + "$")
+        self.lineEdit_Value_25.setText(str(listclose[24]) + "$")
+        self.lineEdit_Value_26.setText(str(listclose[25]) + "$")
+        self.lineEdit_Value_27.setText(str(listclose[26]) + "$")
+        self.lineEdit_Value_28.setText(str(listclose[27]) + "$")
+        self.lineEdit_Value_29.setText(str(listclose[28]) + "$")
+        self.lineEdit_Value_30.setText(str(listclose[29]) + "$")
+        self.lineEdit_Value_31.setText(str(listclose[30]) + "$")
 
     def history(self):
-        print("55")
+
         self.setdate = History('CryptZ/BTC__USD.csv', 'BTC', datetime.datetime.strptime(self.Startdate.date().toString(QtCore.Qt.ISODate), "%Y-%m-%d").date(),
                     datetime.datetime.strptime(self.Enddate.date().toString(QtCore.Qt.ISODate), "%Y-%m-%d").date())
         self.setdate = self.setdate.getrange()
         self.plot = Plot(self.setdate)
         self.plot.drawPlot()
+
         self.label.setPixmap(QtGui.QPixmap("CryptZ/fig3.png"))
+
+    def predictor(self):
+        histoy = History('CryptZ/BTC__USD.csv', 'BTC', datetime.date(2015, 12, 10), datetime.date(2020, 11, 15))
+
+        ab = Genie(int(self.lineEdit.text()))
+        ab.predict_ml(histoy.getrange())
+        self.label_5.setPixmap(QtGui.QPixmap("CryptZ/fig4.png"))
+
+    def slider(self):
+        self.lineEdit.setText(str(self.horizontalSlider.value()))
+
+
+
 
 
 

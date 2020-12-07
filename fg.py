@@ -61,6 +61,15 @@ class Ui_Window(object):
         self.mainframe.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.mainframe.setFrameShadow(QtWidgets.QFrame.Raised)
         self.mainframe.setObjectName("mainframe")
+        self.mainframe_4 = QtWidgets.QFrame(self.mainframe)
+        self.mainframe_4.setGeometry(QtCore.QRect(0, 0, 1001, 41))
+        self.mainframe_4.setStyleSheet("\n"
+"border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);")
+        self.mainframe_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.mainframe_4.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.mainframe_4.setObjectName("mainframe_4")
         self.frame_2 = QtWidgets.QFrame(Window)
         self.frame_2.setGeometry(QtCore.QRect(0, 40, 1001, 51))
         self.frame_2.setStyleSheet("\n"
@@ -213,6 +222,7 @@ class Ui_Window(object):
         font.setBold(False)
         font.setWeight(50)
         self.Submit.setFont(font)
+        self.Submit.setAutoFillBackground(False)
         self.Submit.setStyleSheet("\n"
 "border: 3px solid ;\n"
 "    border-radius: 4px;\n"
@@ -220,6 +230,9 @@ class Ui_Window(object):
 "    border-color : None;\n"
 "    min-width: 80px; \n"
 "")
+        self.Submit.setAutoDefault(False)
+        self.Submit.setDefault(False)
+        self.Submit.setFlat(False)
         self.Submit.setObjectName("Submit")
         self.frame_4.raise_()
         self.textStart.raise_()
@@ -234,7 +247,7 @@ class Ui_Window(object):
 "    border-style: solid;\n"
 "    border-color: rgb(211, 211, 211);\n"
 "")
-        self.Startdate.setMinimumDate(QtCore.QDate(2015, 9, 14))
+        self.Startdate.setMinimumDate(QtCore.QDate(2015, 10, 29))
         self.Startdate.setCalendarPopup(False)
         self.Startdate.setCurrentSectionIndex(0)
         self.Startdate.setObjectName("Startdate")
@@ -245,23 +258,17 @@ class Ui_Window(object):
 "    border-style: solid;\n"
 "    border-color: rgb(211, 211, 211);\n"
 "")
-        self.Enddate.setMinimumDate(QtCore.QDate(2015, 9, 14))
+        self.Enddate.setMinimumDate(QtCore.QDate(2015, 10, 29))
         self.Enddate.setCalendarPopup(False)
         self.Enddate.setCurrentSectionIndex(0)
         self.Enddate.setObjectName("Enddate")
         self.listWidget = QtWidgets.QListWidget(Window)
-        self.listWidget.setGeometry(QtCore.QRect(400, 90, 151, 61))
+        self.listWidget.setGeometry(QtCore.QRect(400, 90, 151, 41))
         self.listWidget.setStyleSheet("border-width: 1px;\n"
 "    border-style: solid;\n"
 "    border-color: rgb(211, 211, 211);\n"
 "background-color: None")
         self.listWidget.setObjectName("listWidget")
-        item = QtWidgets.QListWidgetItem()
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        item.setFont(font)
-        self.listWidget.addItem(item)
         item = QtWidgets.QListWidgetItem()
         font = QtGui.QFont()
         font.setFamily("Lucida Console")
@@ -288,6 +295,15 @@ class Ui_Window(object):
         self.label.setText("")
         self.label.setPixmap(QtGui.QPixmap("CryptZ/fig3.png"))
         self.label.setObjectName("label")
+        self.mainframe_2 = QtWidgets.QFrame(self.frame_7)
+        self.mainframe_2.setGeometry(QtCore.QRect(0, 0, 1001, 221))
+        self.mainframe_2.setStyleSheet("\n"
+"border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);")
+        self.mainframe_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.mainframe_2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.mainframe_2.setObjectName("mainframe_2")
         self.frame_8 = QtWidgets.QFrame(Window)
         self.frame_8.setGeometry(QtCore.QRect(0, 310, 331, 41))
         self.frame_8.setStyleSheet("border-width: 1px;\n"
@@ -375,162 +391,30 @@ class Ui_Window(object):
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.gridLayout = QtWidgets.QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout.setObjectName("gridLayout")
-        self.lineEdit_Day_23 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        self.lineEdit_Day_23.setEnabled(True)
+        self.lineEdit_Day_5 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
         font = QtGui.QFont()
         font.setFamily("Lucida Console")
         font.setPointSize(12)
-        self.lineEdit_Day_23.setFont(font)
-        self.lineEdit_Day_23.setStyleSheet("border-width: 1px;\n"
+        self.lineEdit_Day_5.setFont(font)
+        self.lineEdit_Day_5.setStyleSheet("border-width: 1px;\n"
 "    border-style: solid;\n"
 "    border-color: rgb(211, 211, 211);\n"
 "background-color: None")
-        self.lineEdit_Day_23.setText("")
-        self.lineEdit_Day_23.setReadOnly(True)
-        self.lineEdit_Day_23.setObjectName("lineEdit_Day_23")
-        self.gridLayout.addWidget(self.lineEdit_Day_23, 31, 0, 1, 1)
-        self.lineEdit_Day_2 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        self.lineEdit_Day_5.setReadOnly(True)
+        self.lineEdit_Day_5.setObjectName("lineEdit_Day_5")
+        self.gridLayout.addWidget(self.lineEdit_Day_5, 4, 0, 1, 1)
+        self.lineEdit_Value_18 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
         font = QtGui.QFont()
         font.setFamily("Lucida Console")
         font.setPointSize(12)
-        self.lineEdit_Day_2.setFont(font)
-        self.lineEdit_Day_2.setStyleSheet("border-width: 1px;\n"
+        self.lineEdit_Value_18.setFont(font)
+        self.lineEdit_Value_18.setStyleSheet("border-width: 1px;\n"
 "    border-style: solid;\n"
 "    border-color: rgb(211, 211, 211);\n"
 "background-color: None")
-        self.lineEdit_Day_2.setReadOnly(True)
-        self.lineEdit_Day_2.setObjectName("lineEdit_Day_2")
-        self.gridLayout.addWidget(self.lineEdit_Day_2, 1, 0, 1, 1)
-        self.lineEdit_Day_26 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        self.lineEdit_Day_26.setEnabled(True)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Day_26.setFont(font)
-        self.lineEdit_Day_26.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Day_26.setText("")
-        self.lineEdit_Day_26.setReadOnly(True)
-        self.lineEdit_Day_26.setObjectName("lineEdit_Day_26")
-        self.gridLayout.addWidget(self.lineEdit_Day_26, 36, 0, 1, 1)
-        self.lineEdit_Value_30 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Value_30.setFont(font)
-        self.lineEdit_Value_30.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Value_30.setReadOnly(True)
-        self.lineEdit_Value_30.setObjectName("lineEdit_Value_30")
-        self.gridLayout.addWidget(self.lineEdit_Value_30, 42, 1, 1, 1)
-        self.lineEdit_Day_17 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        self.lineEdit_Day_17.setEnabled(True)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Day_17.setFont(font)
-        self.lineEdit_Day_17.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Day_17.setText("")
-        self.lineEdit_Day_17.setReadOnly(True)
-        self.lineEdit_Day_17.setObjectName("lineEdit_Day_17")
-        self.gridLayout.addWidget(self.lineEdit_Day_17, 23, 0, 1, 1)
-        self.lineEdit_Day_28 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        self.lineEdit_Day_28.setEnabled(True)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Day_28.setFont(font)
-        self.lineEdit_Day_28.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Day_28.setText("")
-        self.lineEdit_Day_28.setReadOnly(True)
-        self.lineEdit_Day_28.setObjectName("lineEdit_Day_28")
-        self.gridLayout.addWidget(self.lineEdit_Day_28, 39, 0, 1, 1)
-        self.lineEdit_Value_2 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Value_2.setFont(font)
-        self.lineEdit_Value_2.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Value_2.setReadOnly(True)
-        self.lineEdit_Value_2.setObjectName("lineEdit_Value_2")
-        self.gridLayout.addWidget(self.lineEdit_Value_2, 1, 1, 1, 1)
-        self.lineEdit_Value_4 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Value_4.setFont(font)
-        self.lineEdit_Value_4.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Value_4.setReadOnly(True)
-        self.lineEdit_Value_4.setObjectName("lineEdit_Value_4")
-        self.gridLayout.addWidget(self.lineEdit_Value_4, 3, 1, 1, 1)
-        self.lineEdit_Value_22 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Value_22.setFont(font)
-        self.lineEdit_Value_22.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Value_22.setReadOnly(True)
-        self.lineEdit_Value_22.setObjectName("lineEdit_Value_22")
-        self.gridLayout.addWidget(self.lineEdit_Value_22, 30, 1, 1, 1)
-        self.lineEdit_Day_9 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Day_9.setFont(font)
-        self.lineEdit_Day_9.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Day_9.setReadOnly(True)
-        self.lineEdit_Day_9.setObjectName("lineEdit_Day_9")
-        self.gridLayout.addWidget(self.lineEdit_Day_9, 11, 0, 1, 1)
-        self.lineEdit_Day_20 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        self.lineEdit_Day_20.setEnabled(True)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Day_20.setFont(font)
-        self.lineEdit_Day_20.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Day_20.setText("")
-        self.lineEdit_Day_20.setReadOnly(True)
-        self.lineEdit_Day_20.setObjectName("lineEdit_Day_20")
-        self.gridLayout.addWidget(self.lineEdit_Day_20, 27, 0, 1, 1)
-        self.lineEdit_Day_25 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        self.lineEdit_Day_25.setEnabled(True)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Day_25.setFont(font)
-        self.lineEdit_Day_25.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Day_25.setText("")
-        self.lineEdit_Day_25.setReadOnly(True)
-        self.lineEdit_Day_25.setObjectName("lineEdit_Day_25")
-        self.gridLayout.addWidget(self.lineEdit_Day_25, 34, 0, 1, 1)
+        self.lineEdit_Value_18.setReadOnly(True)
+        self.lineEdit_Value_18.setObjectName("lineEdit_Value_18")
+        self.gridLayout.addWidget(self.lineEdit_Value_18, 24, 1, 1, 1)
         self.lineEdit_Day_19 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
         self.lineEdit_Day_19.setEnabled(True)
         font = QtGui.QFont()
@@ -545,104 +429,80 @@ class Ui_Window(object):
         self.lineEdit_Day_19.setReadOnly(True)
         self.lineEdit_Day_19.setObjectName("lineEdit_Day_19")
         self.gridLayout.addWidget(self.lineEdit_Day_19, 25, 0, 1, 1)
-        self.lineEdit_Day_16 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        self.lineEdit_Value_8 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
         font = QtGui.QFont()
         font.setFamily("Lucida Console")
         font.setPointSize(12)
-        self.lineEdit_Day_16.setFont(font)
-        self.lineEdit_Day_16.setStyleSheet("border-width: 1px;\n"
+        self.lineEdit_Value_8.setFont(font)
+        self.lineEdit_Value_8.setStyleSheet("border-width: 1px;\n"
 "    border-style: solid;\n"
 "    border-color: rgb(211, 211, 211);\n"
 "background-color: None")
-        self.lineEdit_Day_16.setReadOnly(True)
-        self.lineEdit_Day_16.setObjectName("lineEdit_Day_16")
-        self.gridLayout.addWidget(self.lineEdit_Day_16, 21, 0, 1, 1)
-        self.lineEdit_Day_24 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        self.lineEdit_Day_24.setEnabled(True)
+        self.lineEdit_Value_8.setReadOnly(True)
+        self.lineEdit_Value_8.setObjectName("lineEdit_Value_8")
+        self.gridLayout.addWidget(self.lineEdit_Value_8, 8, 1, 1, 1)
+        self.lineEdit_Value_3 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
         font = QtGui.QFont()
         font.setFamily("Lucida Console")
         font.setPointSize(12)
-        self.lineEdit_Day_24.setFont(font)
-        self.lineEdit_Day_24.setStyleSheet("border-width: 1px;\n"
+        self.lineEdit_Value_3.setFont(font)
+        self.lineEdit_Value_3.setStyleSheet("border-width: 1px;\n"
 "    border-style: solid;\n"
 "    border-color: rgb(211, 211, 211);\n"
 "background-color: None")
-        self.lineEdit_Day_24.setText("")
-        self.lineEdit_Day_24.setReadOnly(True)
-        self.lineEdit_Day_24.setObjectName("lineEdit_Day_24")
-        self.gridLayout.addWidget(self.lineEdit_Day_24, 33, 0, 1, 1)
-        self.lineEdit_Value_18 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        self.lineEdit_Value_3.setReadOnly(True)
+        self.lineEdit_Value_3.setObjectName("lineEdit_Value_3")
+        self.gridLayout.addWidget(self.lineEdit_Value_3, 2, 1, 1, 1)
+        self.lineEdit_Day_26 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        self.lineEdit_Day_26.setEnabled(True)
         font = QtGui.QFont()
         font.setFamily("Lucida Console")
         font.setPointSize(12)
-        self.lineEdit_Value_18.setFont(font)
-        self.lineEdit_Value_18.setStyleSheet("border-width: 1px;\n"
+        self.lineEdit_Day_26.setFont(font)
+        self.lineEdit_Day_26.setStyleSheet("border-width: 1px;\n"
 "    border-style: solid;\n"
 "    border-color: rgb(211, 211, 211);\n"
 "background-color: None")
-        self.lineEdit_Value_18.setReadOnly(True)
-        self.lineEdit_Value_18.setObjectName("lineEdit_Value_18")
-        self.gridLayout.addWidget(self.lineEdit_Value_18, 24, 1, 1, 1)
-        self.lineEdit_Value_12 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        self.lineEdit_Day_26.setText("")
+        self.lineEdit_Day_26.setReadOnly(True)
+        self.lineEdit_Day_26.setObjectName("lineEdit_Day_26")
+        self.gridLayout.addWidget(self.lineEdit_Day_26, 36, 0, 1, 1)
+        self.lineEdit_Value_14 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
         font = QtGui.QFont()
         font.setFamily("Lucida Console")
         font.setPointSize(12)
-        self.lineEdit_Value_12.setFont(font)
-        self.lineEdit_Value_12.setStyleSheet("border-width: 1px;\n"
+        self.lineEdit_Value_14.setFont(font)
+        self.lineEdit_Value_14.setStyleSheet("border-width: 1px;\n"
 "    border-style: solid;\n"
 "    border-color: rgb(211, 211, 211);\n"
 "background-color: None")
-        self.lineEdit_Value_12.setReadOnly(True)
-        self.lineEdit_Value_12.setObjectName("lineEdit_Value_12")
-        self.gridLayout.addWidget(self.lineEdit_Value_12, 16, 1, 1, 1)
-        self.lineEdit_Day_8 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        self.lineEdit_Value_14.setReadOnly(True)
+        self.lineEdit_Value_14.setObjectName("lineEdit_Value_14")
+        self.gridLayout.addWidget(self.lineEdit_Value_14, 18, 1, 1, 1)
+        self.lineEdit_Value_19 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
         font = QtGui.QFont()
         font.setFamily("Lucida Console")
         font.setPointSize(12)
-        self.lineEdit_Day_8.setFont(font)
-        self.lineEdit_Day_8.setStyleSheet("border-width: 1px;\n"
+        self.lineEdit_Value_19.setFont(font)
+        self.lineEdit_Value_19.setStyleSheet("border-width: 1px;\n"
 "    border-style: solid;\n"
 "    border-color: rgb(211, 211, 211);\n"
 "background-color: None")
-        self.lineEdit_Day_8.setReadOnly(True)
-        self.lineEdit_Day_8.setObjectName("lineEdit_Day_8")
-        self.gridLayout.addWidget(self.lineEdit_Day_8, 8, 0, 1, 1)
-        self.lineEdit_Day_11 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        self.lineEdit_Value_19.setReadOnly(True)
+        self.lineEdit_Value_19.setObjectName("lineEdit_Value_19")
+        self.gridLayout.addWidget(self.lineEdit_Value_19, 25, 1, 1, 1)
+        self.lineEdit_Value_21 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
         font = QtGui.QFont()
         font.setFamily("Lucida Console")
         font.setPointSize(12)
-        self.lineEdit_Day_11.setFont(font)
-        self.lineEdit_Day_11.setStyleSheet("border-width: 1px;\n"
+        self.lineEdit_Value_21.setFont(font)
+        self.lineEdit_Value_21.setStyleSheet("border-width: 1px;\n"
 "    border-style: solid;\n"
 "    border-color: rgb(211, 211, 211);\n"
 "background-color: None")
-        self.lineEdit_Day_11.setReadOnly(True)
-        self.lineEdit_Day_11.setObjectName("lineEdit_Day_11")
-        self.gridLayout.addWidget(self.lineEdit_Day_11, 13, 0, 1, 1)
-        self.lineEdit_Value_11 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Value_11.setFont(font)
-        self.lineEdit_Value_11.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Value_11.setReadOnly(True)
-        self.lineEdit_Value_11.setObjectName("lineEdit_Value_11")
-        self.gridLayout.addWidget(self.lineEdit_Value_11, 13, 1, 1, 1)
-        self.lineEdit_Day_13 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Day_13.setFont(font)
-        self.lineEdit_Day_13.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Day_13.setReadOnly(True)
-        self.lineEdit_Day_13.setObjectName("lineEdit_Day_13")
-        self.gridLayout.addWidget(self.lineEdit_Day_13, 17, 0, 1, 1)
+        self.lineEdit_Value_21.setReadOnly(True)
+        self.lineEdit_Value_21.setObjectName("lineEdit_Value_21")
+        self.gridLayout.addWidget(self.lineEdit_Value_21, 28, 1, 1, 1)
         self.lineEdit_Day_29 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
         self.lineEdit_Day_29.setEnabled(True)
         font = QtGui.QFont()
@@ -657,168 +517,6 @@ class Ui_Window(object):
         self.lineEdit_Day_29.setReadOnly(True)
         self.lineEdit_Day_29.setObjectName("lineEdit_Day_29")
         self.gridLayout.addWidget(self.lineEdit_Day_29, 41, 0, 1, 1)
-        self.lineEdit_Day_27 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        self.lineEdit_Day_27.setEnabled(True)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Day_27.setFont(font)
-        self.lineEdit_Day_27.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Day_27.setText("")
-        self.lineEdit_Day_27.setReadOnly(True)
-        self.lineEdit_Day_27.setObjectName("lineEdit_Day_27")
-        self.gridLayout.addWidget(self.lineEdit_Day_27, 37, 0, 1, 1)
-        self.lineEdit_Value = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Value.setFont(font)
-        self.lineEdit_Value.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Value.setReadOnly(True)
-        self.lineEdit_Value.setObjectName("lineEdit_Value")
-        self.gridLayout.addWidget(self.lineEdit_Value, 0, 1, 1, 1)
-        self.lineEdit_Value_5 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Value_5.setFont(font)
-        self.lineEdit_Value_5.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Value_5.setReadOnly(True)
-        self.lineEdit_Value_5.setObjectName("lineEdit_Value_5")
-        self.gridLayout.addWidget(self.lineEdit_Value_5, 4, 1, 1, 1)
-        self.lineEdit_Day_30 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        self.lineEdit_Day_30.setEnabled(True)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Day_30.setFont(font)
-        self.lineEdit_Day_30.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Day_30.setText("")
-        self.lineEdit_Day_30.setReadOnly(True)
-        self.lineEdit_Day_30.setObjectName("lineEdit_Day_30")
-        self.gridLayout.addWidget(self.lineEdit_Day_30, 42, 0, 1, 1)
-        self.lineEdit_Value_3 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Value_3.setFont(font)
-        self.lineEdit_Value_3.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Value_3.setReadOnly(True)
-        self.lineEdit_Value_3.setObjectName("lineEdit_Value_3")
-        self.gridLayout.addWidget(self.lineEdit_Value_3, 2, 1, 1, 1)
-        self.lineEdit_Value_27 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Value_27.setFont(font)
-        self.lineEdit_Value_27.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Value_27.setReadOnly(True)
-        self.lineEdit_Value_27.setObjectName("lineEdit_Value_27")
-        self.gridLayout.addWidget(self.lineEdit_Value_27, 37, 1, 1, 1)
-        self.lineEdit_Day_10 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Day_10.setFont(font)
-        self.lineEdit_Day_10.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Day_10.setReadOnly(True)
-        self.lineEdit_Day_10.setObjectName("lineEdit_Day_10")
-        self.gridLayout.addWidget(self.lineEdit_Day_10, 12, 0, 1, 1)
-        self.lineEdit_Value_10 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Value_10.setFont(font)
-        self.lineEdit_Value_10.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Value_10.setReadOnly(True)
-        self.lineEdit_Value_10.setObjectName("lineEdit_Value_10")
-        self.gridLayout.addWidget(self.lineEdit_Value_10, 12, 1, 1, 1)
-        self.lineEdit_Value_7 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Value_7.setFont(font)
-        self.lineEdit_Value_7.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Value_7.setReadOnly(True)
-        self.lineEdit_Value_7.setObjectName("lineEdit_Value_7")
-        self.gridLayout.addWidget(self.lineEdit_Value_7, 7, 1, 1, 1)
-        self.lineEdit_Value_13 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Value_13.setFont(font)
-        self.lineEdit_Value_13.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Value_13.setReadOnly(True)
-        self.lineEdit_Value_13.setObjectName("lineEdit_Value_13")
-        self.gridLayout.addWidget(self.lineEdit_Value_13, 17, 1, 1, 1)
-        self.lineEdit_Value_28 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Value_28.setFont(font)
-        self.lineEdit_Value_28.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Value_28.setReadOnly(True)
-        self.lineEdit_Value_28.setObjectName("lineEdit_Value_28")
-        self.gridLayout.addWidget(self.lineEdit_Value_28, 39, 1, 1, 1)
-        self.lineEdit_Value_16 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Value_16.setFont(font)
-        self.lineEdit_Value_16.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Value_16.setReadOnly(True)
-        self.lineEdit_Value_16.setObjectName("lineEdit_Value_16")
-        self.gridLayout.addWidget(self.lineEdit_Value_16, 21, 1, 1, 1)
-        self.lineEdit_Day_18 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        self.lineEdit_Day_18.setEnabled(True)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Day_18.setFont(font)
-        self.lineEdit_Day_18.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Day_18.setText("")
-        self.lineEdit_Day_18.setReadOnly(True)
-        self.lineEdit_Day_18.setObjectName("lineEdit_Day_18")
-        self.gridLayout.addWidget(self.lineEdit_Day_18, 24, 0, 1, 1)
         self.lineEdit_Value_17 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
         font = QtGui.QFont()
         font.setFamily("Lucida Console")
@@ -831,42 +529,68 @@ class Ui_Window(object):
         self.lineEdit_Value_17.setReadOnly(True)
         self.lineEdit_Value_17.setObjectName("lineEdit_Value_17")
         self.gridLayout.addWidget(self.lineEdit_Value_17, 23, 1, 1, 1)
-        self.lineEdit_Day_5 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        self.lineEdit_Value_28 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
         font = QtGui.QFont()
         font.setFamily("Lucida Console")
         font.setPointSize(12)
-        self.lineEdit_Day_5.setFont(font)
-        self.lineEdit_Day_5.setStyleSheet("border-width: 1px;\n"
+        self.lineEdit_Value_28.setFont(font)
+        self.lineEdit_Value_28.setStyleSheet("border-width: 1px;\n"
 "    border-style: solid;\n"
 "    border-color: rgb(211, 211, 211);\n"
 "background-color: None")
-        self.lineEdit_Day_5.setReadOnly(True)
-        self.lineEdit_Day_5.setObjectName("lineEdit_Day_5")
-        self.gridLayout.addWidget(self.lineEdit_Day_5, 4, 0, 1, 1)
-        self.lineEdit_Value_29 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        self.lineEdit_Value_28.setReadOnly(True)
+        self.lineEdit_Value_28.setObjectName("lineEdit_Value_28")
+        self.gridLayout.addWidget(self.lineEdit_Value_28, 39, 1, 1, 1)
+        self.lineEdit_Day_25 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        self.lineEdit_Day_25.setEnabled(True)
         font = QtGui.QFont()
         font.setFamily("Lucida Console")
         font.setPointSize(12)
-        self.lineEdit_Value_29.setFont(font)
-        self.lineEdit_Value_29.setStyleSheet("border-width: 1px;\n"
+        self.lineEdit_Day_25.setFont(font)
+        self.lineEdit_Day_25.setStyleSheet("border-width: 1px;\n"
 "    border-style: solid;\n"
 "    border-color: rgb(211, 211, 211);\n"
 "background-color: None")
-        self.lineEdit_Value_29.setReadOnly(True)
-        self.lineEdit_Value_29.setObjectName("lineEdit_Value_29")
-        self.gridLayout.addWidget(self.lineEdit_Value_29, 41, 1, 1, 1)
-        self.lineEdit_Day_7 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        self.lineEdit_Day_25.setText("")
+        self.lineEdit_Day_25.setReadOnly(True)
+        self.lineEdit_Day_25.setObjectName("lineEdit_Day_25")
+        self.gridLayout.addWidget(self.lineEdit_Day_25, 34, 0, 1, 1)
+        self.lineEdit_Value_22 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
         font = QtGui.QFont()
         font.setFamily("Lucida Console")
         font.setPointSize(12)
-        self.lineEdit_Day_7.setFont(font)
-        self.lineEdit_Day_7.setStyleSheet("border-width: 1px;\n"
+        self.lineEdit_Value_22.setFont(font)
+        self.lineEdit_Value_22.setStyleSheet("border-width: 1px;\n"
 "    border-style: solid;\n"
 "    border-color: rgb(211, 211, 211);\n"
 "background-color: None")
-        self.lineEdit_Day_7.setReadOnly(True)
-        self.lineEdit_Day_7.setObjectName("lineEdit_Day_7")
-        self.gridLayout.addWidget(self.lineEdit_Day_7, 7, 0, 1, 1)
+        self.lineEdit_Value_22.setReadOnly(True)
+        self.lineEdit_Value_22.setObjectName("lineEdit_Value_22")
+        self.gridLayout.addWidget(self.lineEdit_Value_22, 30, 1, 1, 1)
+        self.lineEdit_Value_15 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Value_15.setFont(font)
+        self.lineEdit_Value_15.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Value_15.setReadOnly(True)
+        self.lineEdit_Value_15.setObjectName("lineEdit_Value_15")
+        self.gridLayout.addWidget(self.lineEdit_Value_15, 20, 1, 1, 1)
+        self.lineEdit_Value_31 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Value_31.setFont(font)
+        self.lineEdit_Value_31.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Value_31.setReadOnly(True)
+        self.lineEdit_Value_31.setObjectName("lineEdit_Value_31")
+        self.gridLayout.addWidget(self.lineEdit_Value_31, 43, 1, 1, 1)
         self.lineEdit_Day = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
         self.lineEdit_Day.setEnabled(True)
         font = QtGui.QFont()
@@ -881,238 +605,20 @@ class Ui_Window(object):
         self.lineEdit_Day.setReadOnly(True)
         self.lineEdit_Day.setObjectName("lineEdit_Day")
         self.gridLayout.addWidget(self.lineEdit_Day, 0, 0, 1, 1)
-        self.lineEdit_Value_26 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        self.lineEdit_Day_27 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        self.lineEdit_Day_27.setEnabled(True)
         font = QtGui.QFont()
         font.setFamily("Lucida Console")
         font.setPointSize(12)
-        self.lineEdit_Value_26.setFont(font)
-        self.lineEdit_Value_26.setStyleSheet("border-width: 1px;\n"
+        self.lineEdit_Day_27.setFont(font)
+        self.lineEdit_Day_27.setStyleSheet("border-width: 1px;\n"
 "    border-style: solid;\n"
 "    border-color: rgb(211, 211, 211);\n"
 "background-color: None")
-        self.lineEdit_Value_26.setReadOnly(True)
-        self.lineEdit_Value_26.setObjectName("lineEdit_Value_26")
-        self.gridLayout.addWidget(self.lineEdit_Value_26, 36, 1, 1, 1)
-        self.lineEdit_Value_24 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Value_24.setFont(font)
-        self.lineEdit_Value_24.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Value_24.setReadOnly(True)
-        self.lineEdit_Value_24.setObjectName("lineEdit_Value_24")
-        self.gridLayout.addWidget(self.lineEdit_Value_24, 33, 1, 1, 1)
-        self.lineEdit_Day_14 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Day_14.setFont(font)
-        self.lineEdit_Day_14.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Day_14.setReadOnly(True)
-        self.lineEdit_Day_14.setObjectName("lineEdit_Day_14")
-        self.gridLayout.addWidget(self.lineEdit_Day_14, 18, 0, 1, 1)
-        self.lineEdit_Value_23 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Value_23.setFont(font)
-        self.lineEdit_Value_23.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Value_23.setReadOnly(True)
-        self.lineEdit_Value_23.setObjectName("lineEdit_Value_23")
-        self.gridLayout.addWidget(self.lineEdit_Value_23, 31, 1, 1, 1)
-        self.lineEdit_Value_19 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Value_19.setFont(font)
-        self.lineEdit_Value_19.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Value_19.setReadOnly(True)
-        self.lineEdit_Value_19.setObjectName("lineEdit_Value_19")
-        self.gridLayout.addWidget(self.lineEdit_Value_19, 25, 1, 1, 1)
-        self.lineEdit_Value_31 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Value_31.setFont(font)
-        self.lineEdit_Value_31.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Value_31.setReadOnly(True)
-        self.lineEdit_Value_31.setObjectName("lineEdit_Value_31")
-        self.gridLayout.addWidget(self.lineEdit_Value_31, 43, 1, 1, 1)
-        self.lineEdit_Day_12 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Day_12.setFont(font)
-        self.lineEdit_Day_12.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Day_12.setReadOnly(True)
-        self.lineEdit_Day_12.setObjectName("lineEdit_Day_12")
-        self.gridLayout.addWidget(self.lineEdit_Day_12, 16, 0, 1, 1)
-        self.lineEdit_Value_14 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Value_14.setFont(font)
-        self.lineEdit_Value_14.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Value_14.setReadOnly(True)
-        self.lineEdit_Value_14.setObjectName("lineEdit_Value_14")
-        self.gridLayout.addWidget(self.lineEdit_Value_14, 18, 1, 1, 1)
-        self.lineEdit_Day_31 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        self.lineEdit_Day_31.setEnabled(True)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Day_31.setFont(font)
-        self.lineEdit_Day_31.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Day_31.setText("")
-        self.lineEdit_Day_31.setReadOnly(True)
-        self.lineEdit_Day_31.setObjectName("lineEdit_Day_31")
-        self.gridLayout.addWidget(self.lineEdit_Day_31, 43, 0, 1, 1)
-        self.lineEdit_Value_25 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Value_25.setFont(font)
-        self.lineEdit_Value_25.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Value_25.setReadOnly(True)
-        self.lineEdit_Value_25.setObjectName("lineEdit_Value_25")
-        self.gridLayout.addWidget(self.lineEdit_Value_25, 34, 1, 1, 1)
-        self.lineEdit_Day_15 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Day_15.setFont(font)
-        self.lineEdit_Day_15.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Day_15.setReadOnly(True)
-        self.lineEdit_Day_15.setObjectName("lineEdit_Day_15")
-        self.gridLayout.addWidget(self.lineEdit_Day_15, 20, 0, 1, 1)
-        self.lineEdit_Day_3 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Day_3.setFont(font)
-        self.lineEdit_Day_3.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Day_3.setReadOnly(True)
-        self.lineEdit_Day_3.setObjectName("lineEdit_Day_3")
-        self.gridLayout.addWidget(self.lineEdit_Day_3, 2, 0, 1, 1)
-        self.lineEdit_Value_15 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Value_15.setFont(font)
-        self.lineEdit_Value_15.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Value_15.setReadOnly(True)
-        self.lineEdit_Value_15.setObjectName("lineEdit_Value_15")
-        self.gridLayout.addWidget(self.lineEdit_Value_15, 20, 1, 1, 1)
-        self.lineEdit_Day_22 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        self.lineEdit_Day_22.setEnabled(True)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Day_22.setFont(font)
-        self.lineEdit_Day_22.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Day_22.setText("")
-        self.lineEdit_Day_22.setReadOnly(True)
-        self.lineEdit_Day_22.setObjectName("lineEdit_Day_22")
-        self.gridLayout.addWidget(self.lineEdit_Day_22, 30, 0, 1, 1)
-        self.lineEdit_Day_4 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Day_4.setFont(font)
-        self.lineEdit_Day_4.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Day_4.setReadOnly(True)
-        self.lineEdit_Day_4.setObjectName("lineEdit_Day_4")
-        self.gridLayout.addWidget(self.lineEdit_Day_4, 3, 0, 1, 1)
-        self.lineEdit_Value_9 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Value_9.setFont(font)
-        self.lineEdit_Value_9.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Value_9.setReadOnly(True)
-        self.lineEdit_Value_9.setObjectName("lineEdit_Value_9")
-        self.gridLayout.addWidget(self.lineEdit_Value_9, 11, 1, 1, 1)
-        self.lineEdit_Value_20 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Value_20.setFont(font)
-        self.lineEdit_Value_20.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Value_20.setReadOnly(True)
-        self.lineEdit_Value_20.setObjectName("lineEdit_Value_20")
-        self.gridLayout.addWidget(self.lineEdit_Value_20, 27, 1, 1, 1)
-        self.lineEdit_Value_8 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Value_8.setFont(font)
-        self.lineEdit_Value_8.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Value_8.setReadOnly(True)
-        self.lineEdit_Value_8.setObjectName("lineEdit_Value_8")
-        self.gridLayout.addWidget(self.lineEdit_Value_8, 8, 1, 1, 1)
-        self.lineEdit_Value_21 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
-        font = QtGui.QFont()
-        font.setFamily("Lucida Console")
-        font.setPointSize(12)
-        self.lineEdit_Value_21.setFont(font)
-        self.lineEdit_Value_21.setStyleSheet("border-width: 1px;\n"
-"    border-style: solid;\n"
-"    border-color: rgb(211, 211, 211);\n"
-"background-color: None")
-        self.lineEdit_Value_21.setReadOnly(True)
-        self.lineEdit_Value_21.setObjectName("lineEdit_Value_21")
-        self.gridLayout.addWidget(self.lineEdit_Value_21, 28, 1, 1, 1)
+        self.lineEdit_Day_27.setText("")
+        self.lineEdit_Day_27.setReadOnly(True)
+        self.lineEdit_Day_27.setObjectName("lineEdit_Day_27")
+        self.gridLayout.addWidget(self.lineEdit_Day_27, 37, 0, 1, 1)
         self.lineEdit_Day_21 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
         self.lineEdit_Day_21.setEnabled(True)
         font = QtGui.QFont()
@@ -1127,6 +633,218 @@ class Ui_Window(object):
         self.lineEdit_Day_21.setReadOnly(True)
         self.lineEdit_Day_21.setObjectName("lineEdit_Day_21")
         self.gridLayout.addWidget(self.lineEdit_Day_21, 28, 0, 1, 1)
+        self.lineEdit_Value_20 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Value_20.setFont(font)
+        self.lineEdit_Value_20.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Value_20.setReadOnly(True)
+        self.lineEdit_Value_20.setObjectName("lineEdit_Value_20")
+        self.gridLayout.addWidget(self.lineEdit_Value_20, 27, 1, 1, 1)
+        self.lineEdit_Day_28 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        self.lineEdit_Day_28.setEnabled(True)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Day_28.setFont(font)
+        self.lineEdit_Day_28.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Day_28.setText("")
+        self.lineEdit_Day_28.setReadOnly(True)
+        self.lineEdit_Day_28.setObjectName("lineEdit_Day_28")
+        self.gridLayout.addWidget(self.lineEdit_Day_28, 39, 0, 1, 1)
+        self.lineEdit_Day_12 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Day_12.setFont(font)
+        self.lineEdit_Day_12.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Day_12.setReadOnly(True)
+        self.lineEdit_Day_12.setObjectName("lineEdit_Day_12")
+        self.gridLayout.addWidget(self.lineEdit_Day_12, 16, 0, 1, 1)
+        self.lineEdit_Value_16 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Value_16.setFont(font)
+        self.lineEdit_Value_16.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Value_16.setReadOnly(True)
+        self.lineEdit_Value_16.setObjectName("lineEdit_Value_16")
+        self.gridLayout.addWidget(self.lineEdit_Value_16, 21, 1, 1, 1)
+        self.lineEdit_Value_12 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Value_12.setFont(font)
+        self.lineEdit_Value_12.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Value_12.setReadOnly(True)
+        self.lineEdit_Value_12.setObjectName("lineEdit_Value_12")
+        self.gridLayout.addWidget(self.lineEdit_Value_12, 16, 1, 1, 1)
+        self.lineEdit_Day_9 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Day_9.setFont(font)
+        self.lineEdit_Day_9.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Day_9.setReadOnly(True)
+        self.lineEdit_Day_9.setObjectName("lineEdit_Day_9")
+        self.gridLayout.addWidget(self.lineEdit_Day_9, 11, 0, 1, 1)
+        self.lineEdit_Value = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Value.setFont(font)
+        self.lineEdit_Value.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Value.setReadOnly(True)
+        self.lineEdit_Value.setObjectName("lineEdit_Value")
+        self.gridLayout.addWidget(self.lineEdit_Value, 0, 1, 1, 1)
+        self.lineEdit_Value_2 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Value_2.setFont(font)
+        self.lineEdit_Value_2.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Value_2.setReadOnly(True)
+        self.lineEdit_Value_2.setObjectName("lineEdit_Value_2")
+        self.gridLayout.addWidget(self.lineEdit_Value_2, 1, 1, 1, 1)
+        self.lineEdit_Day_13 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Day_13.setFont(font)
+        self.lineEdit_Day_13.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Day_13.setReadOnly(True)
+        self.lineEdit_Day_13.setObjectName("lineEdit_Day_13")
+        self.gridLayout.addWidget(self.lineEdit_Day_13, 17, 0, 1, 1)
+        self.lineEdit_Day_18 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        self.lineEdit_Day_18.setEnabled(True)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Day_18.setFont(font)
+        self.lineEdit_Day_18.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Day_18.setText("")
+        self.lineEdit_Day_18.setReadOnly(True)
+        self.lineEdit_Day_18.setObjectName("lineEdit_Day_18")
+        self.gridLayout.addWidget(self.lineEdit_Day_18, 24, 0, 1, 1)
+        self.lineEdit_Day_20 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        self.lineEdit_Day_20.setEnabled(True)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Day_20.setFont(font)
+        self.lineEdit_Day_20.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Day_20.setText("")
+        self.lineEdit_Day_20.setReadOnly(True)
+        self.lineEdit_Day_20.setObjectName("lineEdit_Day_20")
+        self.gridLayout.addWidget(self.lineEdit_Day_20, 27, 0, 1, 1)
+        self.lineEdit_Value_9 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Value_9.setFont(font)
+        self.lineEdit_Value_9.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Value_9.setReadOnly(True)
+        self.lineEdit_Value_9.setObjectName("lineEdit_Value_9")
+        self.gridLayout.addWidget(self.lineEdit_Value_9, 11, 1, 1, 1)
+        self.lineEdit_Value_10 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Value_10.setFont(font)
+        self.lineEdit_Value_10.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Value_10.setReadOnly(True)
+        self.lineEdit_Value_10.setObjectName("lineEdit_Value_10")
+        self.gridLayout.addWidget(self.lineEdit_Value_10, 12, 1, 1, 1)
+        self.lineEdit_Day_17 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        self.lineEdit_Day_17.setEnabled(True)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Day_17.setFont(font)
+        self.lineEdit_Day_17.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Day_17.setText("")
+        self.lineEdit_Day_17.setReadOnly(True)
+        self.lineEdit_Day_17.setObjectName("lineEdit_Day_17")
+        self.gridLayout.addWidget(self.lineEdit_Day_17, 23, 0, 1, 1)
+        self.lineEdit_Value_25 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Value_25.setFont(font)
+        self.lineEdit_Value_25.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Value_25.setReadOnly(True)
+        self.lineEdit_Value_25.setObjectName("lineEdit_Value_25")
+        self.gridLayout.addWidget(self.lineEdit_Value_25, 34, 1, 1, 1)
+        self.lineEdit_Value_26 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Value_26.setFont(font)
+        self.lineEdit_Value_26.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Value_26.setReadOnly(True)
+        self.lineEdit_Value_26.setObjectName("lineEdit_Value_26")
+        self.gridLayout.addWidget(self.lineEdit_Value_26, 36, 1, 1, 1)
+        self.lineEdit_Value_11 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Value_11.setFont(font)
+        self.lineEdit_Value_11.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Value_11.setReadOnly(True)
+        self.lineEdit_Value_11.setObjectName("lineEdit_Value_11")
+        self.gridLayout.addWidget(self.lineEdit_Value_11, 13, 1, 1, 1)
         self.lineEdit_Value_6 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
         font = QtGui.QFont()
         font.setFamily("Lucida Console")
@@ -1139,6 +857,178 @@ class Ui_Window(object):
         self.lineEdit_Value_6.setReadOnly(True)
         self.lineEdit_Value_6.setObjectName("lineEdit_Value_6")
         self.gridLayout.addWidget(self.lineEdit_Value_6, 5, 1, 1, 1)
+        self.lineEdit_Value_7 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Value_7.setFont(font)
+        self.lineEdit_Value_7.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Value_7.setReadOnly(True)
+        self.lineEdit_Value_7.setObjectName("lineEdit_Value_7")
+        self.gridLayout.addWidget(self.lineEdit_Value_7, 7, 1, 1, 1)
+        self.lineEdit_Day_22 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        self.lineEdit_Day_22.setEnabled(True)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Day_22.setFont(font)
+        self.lineEdit_Day_22.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Day_22.setText("")
+        self.lineEdit_Day_22.setReadOnly(True)
+        self.lineEdit_Day_22.setObjectName("lineEdit_Day_22")
+        self.gridLayout.addWidget(self.lineEdit_Day_22, 30, 0, 1, 1)
+        self.lineEdit_Day_15 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Day_15.setFont(font)
+        self.lineEdit_Day_15.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Day_15.setReadOnly(True)
+        self.lineEdit_Day_15.setObjectName("lineEdit_Day_15")
+        self.gridLayout.addWidget(self.lineEdit_Day_15, 20, 0, 1, 1)
+        self.lineEdit_Value_23 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Value_23.setFont(font)
+        self.lineEdit_Value_23.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Value_23.setReadOnly(True)
+        self.lineEdit_Value_23.setObjectName("lineEdit_Value_23")
+        self.gridLayout.addWidget(self.lineEdit_Value_23, 31, 1, 1, 1)
+        self.lineEdit_Value_29 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Value_29.setFont(font)
+        self.lineEdit_Value_29.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Value_29.setReadOnly(True)
+        self.lineEdit_Value_29.setObjectName("lineEdit_Value_29")
+        self.gridLayout.addWidget(self.lineEdit_Value_29, 41, 1, 1, 1)
+        self.lineEdit_Day_16 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Day_16.setFont(font)
+        self.lineEdit_Day_16.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Day_16.setReadOnly(True)
+        self.lineEdit_Day_16.setObjectName("lineEdit_Day_16")
+        self.gridLayout.addWidget(self.lineEdit_Day_16, 21, 0, 1, 1)
+        self.lineEdit_Day_4 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Day_4.setFont(font)
+        self.lineEdit_Day_4.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Day_4.setReadOnly(True)
+        self.lineEdit_Day_4.setObjectName("lineEdit_Day_4")
+        self.gridLayout.addWidget(self.lineEdit_Day_4, 3, 0, 1, 1)
+        self.lineEdit_Value_27 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Value_27.setFont(font)
+        self.lineEdit_Value_27.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Value_27.setReadOnly(True)
+        self.lineEdit_Value_27.setObjectName("lineEdit_Value_27")
+        self.gridLayout.addWidget(self.lineEdit_Value_27, 37, 1, 1, 1)
+        self.lineEdit_Value_30 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Value_30.setFont(font)
+        self.lineEdit_Value_30.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Value_30.setReadOnly(True)
+        self.lineEdit_Value_30.setObjectName("lineEdit_Value_30")
+        self.gridLayout.addWidget(self.lineEdit_Value_30, 42, 1, 1, 1)
+        self.lineEdit_Value_5 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Value_5.setFont(font)
+        self.lineEdit_Value_5.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Value_5.setReadOnly(True)
+        self.lineEdit_Value_5.setObjectName("lineEdit_Value_5")
+        self.gridLayout.addWidget(self.lineEdit_Value_5, 4, 1, 1, 1)
+        self.lineEdit_Value_24 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Value_24.setFont(font)
+        self.lineEdit_Value_24.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Value_24.setReadOnly(True)
+        self.lineEdit_Value_24.setObjectName("lineEdit_Value_24")
+        self.gridLayout.addWidget(self.lineEdit_Value_24, 33, 1, 1, 1)
+        self.lineEdit_Day_23 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        self.lineEdit_Day_23.setEnabled(True)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Day_23.setFont(font)
+        self.lineEdit_Day_23.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Day_23.setText("")
+        self.lineEdit_Day_23.setReadOnly(True)
+        self.lineEdit_Day_23.setObjectName("lineEdit_Day_23")
+        self.gridLayout.addWidget(self.lineEdit_Day_23, 31, 0, 1, 1)
+        self.lineEdit_Day_8 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Day_8.setFont(font)
+        self.lineEdit_Day_8.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Day_8.setReadOnly(True)
+        self.lineEdit_Day_8.setObjectName("lineEdit_Day_8")
+        self.gridLayout.addWidget(self.lineEdit_Day_8, 8, 0, 1, 1)
+        self.lineEdit_Day_7 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Day_7.setFont(font)
+        self.lineEdit_Day_7.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Day_7.setReadOnly(True)
+        self.lineEdit_Day_7.setObjectName("lineEdit_Day_7")
+        self.gridLayout.addWidget(self.lineEdit_Day_7, 7, 0, 1, 1)
         self.lineEdit_Day_6 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
         font = QtGui.QFont()
         font.setFamily("Lucida Console")
@@ -1151,7 +1041,200 @@ class Ui_Window(object):
         self.lineEdit_Day_6.setReadOnly(True)
         self.lineEdit_Day_6.setObjectName("lineEdit_Day_6")
         self.gridLayout.addWidget(self.lineEdit_Day_6, 5, 0, 1, 1)
+        self.lineEdit_Value_13 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Value_13.setFont(font)
+        self.lineEdit_Value_13.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Value_13.setReadOnly(True)
+        self.lineEdit_Value_13.setObjectName("lineEdit_Value_13")
+        self.gridLayout.addWidget(self.lineEdit_Value_13, 17, 1, 1, 1)
+        self.lineEdit_Day_24 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        self.lineEdit_Day_24.setEnabled(True)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Day_24.setFont(font)
+        self.lineEdit_Day_24.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Day_24.setText("")
+        self.lineEdit_Day_24.setReadOnly(True)
+        self.lineEdit_Day_24.setObjectName("lineEdit_Day_24")
+        self.gridLayout.addWidget(self.lineEdit_Day_24, 33, 0, 1, 1)
+        self.lineEdit_Day_10 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Day_10.setFont(font)
+        self.lineEdit_Day_10.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Day_10.setReadOnly(True)
+        self.lineEdit_Day_10.setObjectName("lineEdit_Day_10")
+        self.gridLayout.addWidget(self.lineEdit_Day_10, 12, 0, 1, 1)
+        self.lineEdit_Value_4 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Value_4.setFont(font)
+        self.lineEdit_Value_4.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Value_4.setReadOnly(True)
+        self.lineEdit_Value_4.setObjectName("lineEdit_Value_4")
+        self.gridLayout.addWidget(self.lineEdit_Value_4, 3, 1, 1, 1)
+        self.lineEdit_Day_3 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Day_3.setFont(font)
+        self.lineEdit_Day_3.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Day_3.setReadOnly(True)
+        self.lineEdit_Day_3.setObjectName("lineEdit_Day_3")
+        self.gridLayout.addWidget(self.lineEdit_Day_3, 2, 0, 1, 1)
+        self.lineEdit_Day_14 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Day_14.setFont(font)
+        self.lineEdit_Day_14.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Day_14.setReadOnly(True)
+        self.lineEdit_Day_14.setObjectName("lineEdit_Day_14")
+        self.gridLayout.addWidget(self.lineEdit_Day_14, 18, 0, 1, 1)
+        self.lineEdit_Day_31 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        self.lineEdit_Day_31.setEnabled(True)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Day_31.setFont(font)
+        self.lineEdit_Day_31.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Day_31.setText("")
+        self.lineEdit_Day_31.setReadOnly(True)
+        self.lineEdit_Day_31.setObjectName("lineEdit_Day_31")
+        self.gridLayout.addWidget(self.lineEdit_Day_31, 43, 0, 1, 1)
+        self.lineEdit_Day_11 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Day_11.setFont(font)
+        self.lineEdit_Day_11.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Day_11.setReadOnly(True)
+        self.lineEdit_Day_11.setObjectName("lineEdit_Day_11")
+        self.gridLayout.addWidget(self.lineEdit_Day_11, 13, 0, 1, 1)
+        self.lineEdit_Day_30 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        self.lineEdit_Day_30.setEnabled(True)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Day_30.setFont(font)
+        self.lineEdit_Day_30.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Day_30.setText("")
+        self.lineEdit_Day_30.setReadOnly(True)
+        self.lineEdit_Day_30.setObjectName("lineEdit_Day_30")
+        self.gridLayout.addWidget(self.lineEdit_Day_30, 42, 0, 1, 1)
+        self.lineEdit_Day_2 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        self.lineEdit_Day_2.setFont(font)
+        self.lineEdit_Day_2.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit_Day_2.setReadOnly(True)
+        self.lineEdit_Day_2.setObjectName("lineEdit_Day_2")
+        self.gridLayout.addWidget(self.lineEdit_Day_2, 1, 0, 1, 1)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
+        self.Submit_2 = QtWidgets.QPushButton(Window)
+        self.Submit_2.setGeometry(QtCore.QRect(760, 510, 91, 31))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        font.setBold(False)
+        font.setWeight(50)
+        self.Submit_2.setFont(font)
+        self.Submit_2.setStyleSheet("\n"
+"border: 3px solid ;\n"
+"    border-radius: 4px;\n"
+"    background-color: rgb(255, 255, 255);\n"
+"    border-color : None;\n"
+"    min-width: 80px; \n"
+"")
+        self.Submit_2.setObjectName("Submit_2")
+        self.mainframe_3 = QtWidgets.QFrame(Window)
+        self.mainframe_3.setGeometry(QtCore.QRect(330, 310, 601, 191))
+        self.mainframe_3.setStyleSheet("\n"
+"border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);")
+        self.mainframe_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.mainframe_3.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.mainframe_3.setObjectName("mainframe_3")
+        self.label_5 = QtWidgets.QLabel(self.mainframe_3)
+        self.label_5.setGeometry(QtCore.QRect(-50, 0, 591, 191))
+        self.label_5.setText("")
+        self.label_5.setPixmap(QtGui.QPixmap("CryptZ/fig4.png"))
+        self.label_5.setObjectName("label_5")
+        self.label_6 = QtWidgets.QLabel(Window)
+        self.label_6.setGeometry(QtCore.QRect(340, 510, 241, 31))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(12)
+        font.setBold(False)
+        font.setWeight(50)
+        self.label_6.setFont(font)
+        self.label_6.setObjectName("label_6")
+        self.toolButton_Coin_3 = QtWidgets.QToolButton(Window)
+        self.toolButton_Coin_3.setEnabled(True)
+        self.toolButton_Coin_3.setGeometry(QtCore.QRect(580, 510, 31, 21))
+        self.toolButton_Coin_3.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.toolButton_Coin_3.setAutoRaise(False)
+        self.toolButton_Coin_3.setArrowType(QtCore.Qt.DownArrow)
+        self.toolButton_Coin_3.setObjectName("toolButton_Coin_3")
+        self.horizontalSlider = QtWidgets.QSlider(Window)
+        self.horizontalSlider.setGeometry(QtCore.QRect(610, 500, 141, 19))
+        self.horizontalSlider.setStyleSheet("border-width: 0px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.horizontalSlider.setMaximum(50)
+        self.horizontalSlider.setOrientation(QtCore.Qt.Horizontal)
+        self.horizontalSlider.setObjectName("horizontalSlider")
+        self.lineEdit = QtWidgets.QLineEdit(Window)
+        self.lineEdit.setGeometry(QtCore.QRect(650, 520, 71, 20))
+        self.lineEdit.setStyleSheet("border-width: 1px;\n"
+"    border-style: solid;\n"
+"    border-color: rgb(211, 211, 211);\n"
+"background-color: None")
+        self.lineEdit.setReadOnly(False)
+        self.lineEdit.setObjectName("lineEdit")
+        self.mainframe_3.raise_()
         self.scrollArea.raise_()
         self.frame_9.raise_()
         self.frame_7.raise_()
@@ -1163,6 +1246,11 @@ class Ui_Window(object):
         self.Enddate.raise_()
         self.listWidget.raise_()
         self.frame_8.raise_()
+        self.Submit_2.raise_()
+        self.label_6.raise_()
+        self.toolButton_Coin_3.raise_()
+        self.horizontalSlider.raise_()
+        self.lineEdit.raise_()
 
         self.retranslateUi(Window)
         self.toolButton_Start.clicked.connect(self.Startdate.show)
@@ -1175,6 +1263,8 @@ class Ui_Window(object):
         self.toolButton_tabledate.clicked.connect(self.Tabledate.show)
         self.Submit.clicked.connect(self.label.show)
         self.Analyzer.clicked.connect(self.label.hide)
+        self.toolButton_Coin_3.clicked.connect(self.horizontalSlider.show)
+        self.horizontalSlider.sliderReleased.connect(self.horizontalSlider.hide)
         QtCore.QMetaObject.connectSlotsByName(Window)
 
     def retranslateUi(self, Window):
@@ -1226,14 +1316,15 @@ class Ui_Window(object):
         item = self.listWidget.item(0)
         item.setText(_translate("Window", "BitCoin"))
         item = self.listWidget.item(1)
-        item.setText(_translate("Window", "SMTH Else"))
-        item = self.listWidget.item(2)
         item.setText(_translate("Window", "Ethirium"))
         self.listWidget.setSortingEnabled(__sortingEnabled)
         self.label_2.setText(_translate("Window", "Date"))
         self.label_3.setText(_translate("Window", "Price in USD"))
         self.toolButton_tabledate.setText(_translate("Window", "..."))
         self.label_4.setText(_translate("Window", "Choose month"))
+        self.Submit_2.setText(_translate("Window", "Submit!"))
+        self.label_6.setText(_translate("Window", "Change prediction range"))
+        self.toolButton_Coin_3.setText(_translate("Window", "..."))
 
 
 if __name__ == "__main__":
