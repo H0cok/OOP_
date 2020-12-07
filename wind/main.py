@@ -2,16 +2,17 @@
 import sys
 import os
 
-
-from PySide2.QtWidgets import QApplication, QMainWindow
-from PySide2.QtCore import QFile
+import PySide2.QtCore
+from PySide2.QtWidgets import QApplication, QWidget
+from PySide2.QtCore import QFile, QObject
 from PySide2.QtUiTools import QUiLoader
 
 
-class Main_window(QMainWindow):
+class Window(QWidget):
     def __init__(self):
-        super(Main_window, self).__init__()
+        super(Window, self).__init__()
         self.load_ui()
+
 
     def load_ui(self):
         loader = QUiLoader()
@@ -21,8 +22,12 @@ class Main_window(QMainWindow):
         loader.load(ui_file, self)
         ui_file.close()
 
+
+
+
 if __name__ == "__main__":
     app = QApplication([])
-    widget = Main_window()
+    widget = Window()
     widget.show()
     sys.exit(app.exec_())
+

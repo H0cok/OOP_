@@ -1,0 +1,2579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Window</class>
+ <widget class="QWidget" name="Window">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>863</width>
+    <height>545</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Lucida Console</family>
+    <pointsize>12</pointsize>
+    <weight>50</weight>
+    <bold>false</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Window</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QPushButton" name="Analyzer">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lucida Console</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+border: 3px solid ;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+	border-color : None;
+    min-width: 80px; 
+</string>
+   </property>
+   <property name="text">
+    <string>Analyzer</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Traider">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>0</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lucida Console</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 3px solid ;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+	border-color : None;
+    min-width: 80px; </string>
+   </property>
+   <property name="text">
+    <string>Traider</string>
+   </property>
+  </widget>
+  <widget class="QFrame" name="mainframe">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1001</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QFrame" name="mainframe_4">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1001</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="frame_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>40</y>
+     <width>1001</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QTextBrowser" name="textStart">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>281</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lucida Console</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="acceptDrops">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: None;
+border-color : None;
+</string>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lucida Console'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Start Date&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>171</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QToolButton" name="toolButton_Start">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>19</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>...</string>
+     </property>
+     <property name="autoRaise">
+      <bool>false</bool>
+     </property>
+     <property name="arrowType">
+      <enum>Qt::DownArrow</enum>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame_3">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>0</y>
+      <width>161</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QTextBrowser" name="textEnd">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>151</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Console</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="acceptDrops">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: None;
+border-color : None;
+</string>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lucida Console'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;End Date&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="toolButton_End">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>18</y>
+       <width>31</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>...</string>
+     </property>
+     <property name="autoRaise">
+      <bool>false</bool>
+     </property>
+     <property name="arrowType">
+      <enum>Qt::DownArrow</enum>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QTextBrowser" name="textBrowser">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>0</y>
+      <width>111</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lucida Console'; font-size:12pt;&quot;&gt;Coin&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_Coin">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>20</y>
+      <width>31</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+    <property name="autoRaise">
+     <bool>false</bool>
+    </property>
+    <property name="arrowType">
+     <enum>Qt::DownArrow</enum>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_4">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>863</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QTextBrowser" name="textStart_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>281</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Console</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="acceptDrops">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: None;
+border-color : None;
+</string>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lucida Console'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Start Date&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QFrame" name="frame_5">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>171</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QToolButton" name="toolButton_Start_2">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>19</y>
+        <width>31</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+      <property name="autoRaise">
+       <bool>false</bool>
+      </property>
+      <property name="arrowType">
+       <enum>Qt::DownArrow</enum>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="frame_6">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>0</y>
+       <width>161</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QTextBrowser" name="textEnd_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>10</y>
+        <width>151</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Lucida Console</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="acceptDrops">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: None;
+border-color : None;
+</string>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lucida Console'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;End Date&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="toolButton_End_2">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>18</y>
+        <width>31</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+      <property name="autoRaise">
+       <bool>false</bool>
+      </property>
+      <property name="arrowType">
+       <enum>Qt::DownArrow</enum>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QTextBrowser" name="textBrowser_2">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>0</y>
+       <width>111</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lucida Console'; font-size:12pt;&quot;&gt;Coin&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="toolButton_Coin_2">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>20</y>
+       <width>31</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>...</string>
+     </property>
+     <property name="autoRaise">
+      <bool>false</bool>
+     </property>
+     <property name="arrowType">
+      <enum>Qt::DownArrow</enum>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Submit">
+     <property name="geometry">
+      <rect>
+       <x>760</x>
+       <y>10</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lucida Console</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+border: 3px solid ;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+	border-color : None;
+    min-width: 80px; 
+</string>
+     </property>
+     <property name="text">
+      <string>Submit!</string>
+     </property>
+    </widget>
+   </widget>
+   <zorder>frame_4</zorder>
+   <zorder>textStart</zorder>
+   <zorder>frame</zorder>
+   <zorder>frame_3</zorder>
+   <zorder>textBrowser</zorder>
+   <zorder>toolButton_Coin</zorder>
+  </widget>
+  <widget class="QDateEdit" name="Startdate">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>90</y>
+     <width>141</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+</string>
+   </property>
+   <property name="minimumDate">
+    <date>
+     <year>2015</year>
+     <month>9</month>
+     <day>14</day>
+    </date>
+   </property>
+   <property name="calendarPopup">
+    <bool>false</bool>
+   </property>
+   <property name="currentSectionIndex">
+    <number>0</number>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="Enddate">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>90</y>
+     <width>141</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+</string>
+   </property>
+   <property name="minimumDate">
+    <date>
+     <year>2015</year>
+     <month>9</month>
+     <day>14</day>
+    </date>
+   </property>
+   <property name="calendarPopup">
+    <bool>false</bool>
+   </property>
+   <property name="currentSectionIndex">
+    <number>0</number>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="listWidget">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>90</y>
+     <width>151</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>BitCoin</string>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lucida Console</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Ethirium</string>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lucida Console</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+   </item>
+  </widget>
+  <widget class="QFrame" name="frame_7">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>90</y>
+     <width>901</width>
+     <height>221</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>-50</x>
+      <y>0</y>
+      <width>921</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../CryptZ/fig3.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QFrame" name="mainframe_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1001</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="frame_8">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>310</y>
+     <width>331</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lucida Console</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Date</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>0</y>
+      <width>181</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lucida Console</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Price in USD</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="frame_9">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>510</y>
+     <width>331</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QDateEdit" name="Tabledate">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>0</y>
+      <width>131</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lucida Console</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+</string>
+    </property>
+    <property name="minimumDate">
+     <date>
+      <year>2015</year>
+      <month>10</month>
+      <day>29</day>
+     </date>
+    </property>
+    <property name="currentSection">
+     <enum>QDateTimeEdit::MonthSection</enum>
+    </property>
+    <property name="calendarPopup">
+     <bool>false</bool>
+    </property>
+    <property name="currentSectionIndex">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_tabledate">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>10</y>
+      <width>31</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+    <property name="autoRaise">
+     <bool>false</bool>
+    </property>
+    <property name="arrowType">
+     <enum>Qt::DownArrow</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lucida Console</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-width: 0px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+    </property>
+    <property name="text">
+     <string>Choose month</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QScrollArea" name="scrollArea">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>350</y>
+     <width>331</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lucida Console</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: rgb(255, 255, 255)</string>
+   </property>
+   <property name="widgetResizable">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="scrollAreaWidgetContents">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>312</width>
+      <height>818</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-width: 0px;
+
+background-color: None</string>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="4" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_5">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="24" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_18">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="25" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_19">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_8">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_3">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="36" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_26">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="18" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_14">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="25" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_19">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="28" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_21">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="41" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_29">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="23" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_17">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="39" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_28">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="34" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_25">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="30" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_22">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="20" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_15">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="43" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_31">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="37" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_27">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="28" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_21">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="27" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_20">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="39" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_28">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="16" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_12">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="21" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_16">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="16" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_12">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_9">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_2">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="17" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_13">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="24" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_18">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="27" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_20">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_9">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="12" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_10">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="23" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_17">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="34" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_25">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="36" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_26">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_11">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_6">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_7">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="30" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_22">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="20" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_15">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="31" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_23">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="41" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_29">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="21" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_16">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_4">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="37" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_27">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="42" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_30">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_5">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="33" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_24">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="31" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_23">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_8">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_7">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_6">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="17" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_13">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="33" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_24">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="12" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_10">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="lineEdit_Value_4">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_3">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="18" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_14">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="43" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_31">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_11">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="42" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_30">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLineEdit" name="lineEdit_Day_2">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="Submit_2">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>510</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lucida Console</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+border: 3px solid ;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+	border-color : None;
+    min-width: 80px; 
+</string>
+   </property>
+   <property name="text">
+    <string>Submit!</string>
+   </property>
+  </widget>
+  <widget class="QFrame" name="mainframe_3">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>310</y>
+     <width>601</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>-50</x>
+      <y>0</y>
+      <width>591</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../CryptZ/fig4.png</pixmap>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>510</y>
+     <width>241</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lucida Console</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Change prediction range</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="toolButton_Coin_3">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>510</y>
+     <width>31</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+   </property>
+   <property name="text">
+    <string>...</string>
+   </property>
+   <property name="autoRaise">
+    <bool>false</bool>
+   </property>
+   <property name="arrowType">
+    <enum>Qt::DownArrow</enum>
+   </property>
+  </widget>
+  <widget class="QSlider" name="horizontalSlider">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>500</y>
+     <width>141</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-width: 0px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+   </property>
+   <property name="maximum">
+    <number>50</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>520</y>
+     <width>71</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+background-color: None</string>
+   </property>
+  </widget>
+  <zorder>mainframe_3</zorder>
+  <zorder>scrollArea</zorder>
+  <zorder>frame_9</zorder>
+  <zorder>frame_7</zorder>
+  <zorder>mainframe</zorder>
+  <zorder>Analyzer</zorder>
+  <zorder>Traider</zorder>
+  <zorder>Startdate</zorder>
+  <zorder>frame_2</zorder>
+  <zorder>Enddate</zorder>
+  <zorder>listWidget</zorder>
+  <zorder>frame_8</zorder>
+  <zorder>Submit_2</zorder>
+  <zorder>label_6</zorder>
+  <zorder>toolButton_Coin_3</zorder>
+  <zorder>horizontalSlider</zorder>
+  <zorder>lineEdit</zorder>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>toolButton_Start</sender>
+   <signal>clicked()</signal>
+   <receiver>Startdate</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>132</x>
+     <y>59</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>200</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Startdate</sender>
+   <signal>editingFinished()</signal>
+   <receiver>Startdate</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>200</x>
+     <y>90</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>200</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolButton_End</sender>
+   <signal>clicked()</signal>
+   <receiver>Enddate</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>292</x>
+     <y>59</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>360</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Enddate</sender>
+   <signal>editingFinished()</signal>
+   <receiver>Enddate</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>360</x>
+     <y>90</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>360</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listWidget</sender>
+   <signal>itemClicked(QListWidgetItem*)</signal>
+   <receiver>listWidget</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>475</x>
+     <y>120</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>475</x>
+     <y>120</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolButton_Coin</sender>
+   <signal>clicked()</signal>
+   <receiver>listWidget</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>405</x>
+     <y>70</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>475</x>
+     <y>120</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Tabledate</sender>
+   <signal>editingFinished()</signal>
+   <receiver>Tabledate</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>245</x>
+     <y>520</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>245</x>
+     <y>520</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolButton_tabledate</sender>
+   <signal>clicked()</signal>
+   <receiver>Tabledate</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>165</x>
+     <y>529</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>245</x>
+     <y>520</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Submit</sender>
+   <signal>clicked()</signal>
+   <receiver>label</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>845</x>
+     <y>65</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>445</x>
+     <y>200</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Analyzer</sender>
+   <signal>clicked()</signal>
+   <receiver>label</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>45</x>
+     <y>15</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>445</x>
+     <y>200</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

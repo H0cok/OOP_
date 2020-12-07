@@ -1,24 +1,45 @@
-import plotly.graph_objects as go
+import urllib.request
+import os
+import time
+import pandas as pd
+import datetime
+import plotly.express as px
+from abc import ABCMeta, abstractmethod, abstractproperty
+import sys
+from PyQt5 import QtCore, QtGui, QtWidgets
+from fg import *
+from statsmodels.tsa.arima_model import ARIMA
+#dependencies for the DecisionTree method
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.model_selection import train_test_split
 import numpy as np
-from IPython.display import Image
 
-np.random.seed(1)
-N = 100
-x = np.random.rand(N)
-y = np.random.rand(N)
-colors = np.random.rand(N)
-sz = np.random.rand(N) * 30
-fig = go.Figure()
-fig.add_trace(go.Scatter(
-    x=x,
-    y=y/5,
-    mode="markers",
-    marker=go.scatter.Marker(
-        size=sz,
-        color=colors,
-        opacity=0.6,
-        colorscale="Viridis"
-    )
-))
 
-fig.write_image("C:\Program Files\CryptZ\i8g1.png",width=1110, height=360, scale=1)
+
+class CryptData:
+
+    def __init__(self, dir_adr, name):
+        self.data = dir_adr
+        self.name = name
+
+class Refresher(CryptData):
+
+    def __init__(self, wallet_adr, dir_adr, name):
+        super().__init__(dir_adr, name)
+        self.__URLlink = wallet_adr
+        self.curDate = time.time()
+
+    def getFileLink(self):
+        return self.data
+
+    def updateLatestDownloadedDate(self):
+        if not os.path.exists("CryptZ"):
+            os.mkdir("CryptZ")
+            # creates directory for external files if it doesn't exist
+        if not os.path.exists(self.data):
+            urllib.request.urlretrieve(self.__URLlink, self.data)
+        else: # date length in sec
+            urllib.request.urlretrieve(self.__URLlink, self.data)
+a = Refresher("https://www.cryptodatadownload.com/cdd/Gemini_BTCUSD_d.csv", "CryptZ\BTC__USD.csv", "BTC")
+
+a.updateLatestDownloadedDate()
