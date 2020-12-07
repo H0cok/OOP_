@@ -11,7 +11,6 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.model_selection import train_test_split
 
 
-
 class UserInput:
     state = True # the input-field doesn`t blocked
     def __init__(self, st_date, end_date, coin_inp, intervals = None, investments = None):
@@ -71,8 +70,14 @@ class Refresher(CryptData):
         if not os.path.exists(self.data):
             urllib.request.urlretrieve(self.__URLlink, self.data)
         elif time.time() - os.path.getmtime(self.data) > 86400:
-            urllib.request.urlretrieve(self.__URLlink, self.data)
-        # updates info if day passe
+            urllib.request.urlretrieve(self.__URLlink, self.data)     # updates info if day is passed
+        with open(self.getFilename(), "r") as file:
+            lines = file.readlines()
+            if lines[0][:4] != "Unix":
+                del lines[0]
+                with open(self.getFilename(), "w+") as new_file:
+                    for line in lines:
+                        new_file.write(line)
 
 class CustomExeption(Exception):
     def __init__(self, msg):
@@ -98,12 +103,20 @@ class Data(CryptData):
             return self.range
         else:
             raise CustomExeption("Your range is empty")
-class History:
+
+class History:#Singletone
+    __instance = None
+    def __new__(cls, dir_adr, name, minDate, maxDate):
+        if not cls.__instance:
+            cls.__instance = super().__new__(cls)
+        return cls.__instance
+
     def __init__(self, dir_adr, name, minDate, maxDate):
         self.curRange = Data(dir_adr, name, minDate, maxDate)
         self.minDate = minDate
         self.maxDate = maxDate
         self.name = name
+
     def getrange(self):
         return self.curRange.getDataRange()
 
@@ -138,7 +151,7 @@ class Genie:
         x = np.array(df.drop(['Prediction'], 1))[:-self.__future_days]
         y = np.array(df['Prediction'])[:-self.__future_days]
         #Split the data for training and testing
-        x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.1)
+        x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.0025)
         tree = DecisionTreeRegressor().fit(x_train, y_train)
 
         #Get the last 'x' rows from the feature data set
