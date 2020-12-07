@@ -71,13 +71,20 @@ class CryptData:
 
 
 class Refresher(CryptData):
-
     def __init__(self, wallet_adr, dir_adr, name):
         super().__init__(dir_adr, name)
         self.__URLlink = wallet_adr
-        self.curDate = time.time()
 
-    def getFileLink(self):
+    def setCurrencyLink(self, link):
+        self.__URLlink = link
+
+    def getCurrencyLink(self):
+        return self.__URLlink
+
+    def setFilename(self, data):
+        self.data = data
+
+    def getFilename(self):
         return self.data
 
     def updateLatestDownloadedDate(self):
@@ -86,9 +93,15 @@ class Refresher(CryptData):
             # creates directory for external files if it doesn't exist
         if not os.path.exists(self.data):
             urllib.request.urlretrieve(self.__URLlink, self.data)
-        elif self.curDate - os.path.getmtime(self.data) > 86400: # date length in sec
-            urllib.request.urlretrieve(self.__URLlink, self.data)
-        # updates info if day passe
+        elif time.time() - os.path.getmtime(self.data) > 86400:
+            urllib.request.urlretrieve(self.__URLlink, self.data)     # updates info if day is passed
+        with open(self.getFilename(), "r") as file:
+            lines = file.readlines()
+            if lines[0][:4] != "Unix":
+                del lines[0]
+                with open(self.getFilename(), "w+") as new_file:
+                    for line in lines:
+                        new_file.write(line)
 
 
 class Data(CryptData):
@@ -117,7 +130,13 @@ class Data(CryptData):
             return RangeError("Incorrect values").ShowError()
 
 
-class History:
+class History:#Singletone
+    __instance = None
+    def __new__(cls, dir_adr, name, minDate, maxDate):
+        if not cls.__instance:
+            cls.__instance = super().__new__(cls)
+        return cls.__instance
+
     def __init__(self, dir_adr, name, minDate, maxDate):
         self.curRange = Data(dir_adr, name, minDate, maxDate)
         self.minDate = minDate
@@ -133,6 +152,9 @@ class History:
     def getEndDate(self):
         return self.maxDate
 
+class CustomExeption(Exception):
+    def __init__(self, msg):
+        super().__init__(msg)
 
 class Error:
     __metaclass__ = ABCMeta
